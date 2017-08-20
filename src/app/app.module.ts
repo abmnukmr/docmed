@@ -10,6 +10,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {MorePageModule} from "../pages/more/more.module";
+import {MorePage} from "../pages/more/more";
+import {DocterPage} from "../pages/docter/docter";
+import {ChemistPage} from "../pages/chemist/chemist";
+import {PathalogyPage} from "../pages/pathalogy/pathalogy";
+import {DoctersprofPage} from "../pages/doctersprof/doctersprof";
+import {ShrinkHeader} from "../directives/shrink-header/shrink-header";
+import {DoctrrPage} from "../pages/doctrr/doctrr";
+import {ElasticHeader} from "../directives/elastic-header/elastic-header";
+import {ChemistprofPage} from "../pages/chemistprof/chemistprof";
+import {PathoprofPage} from "../pages/pathoprof/pathoprof";
 
 @NgModule({
   declarations: [
@@ -17,8 +28,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
-  ],
+    TabsPage,
+    MorePage,
+    DocterPage,
+    ShrinkHeader,
+    DoctrrPage,
+    ChemistPage,
+    PathalogyPage,
+    DoctersprofPage,
+    ElasticHeader,
+    ChemistprofPage,
+    PathoprofPage
+
+     ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
@@ -29,7 +51,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    ChemistPage,
+    PathalogyPage,
+    TabsPage,
+    MorePage,
+    DocterPage,
+    ChemistprofPage,
+    DoctrrPage,
+    DoctersprofPage,
+    PathoprofPage
   ],
   providers: [
     StatusBar,

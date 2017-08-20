@@ -4,14 +4,40 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content no-padding>
+
+
+
+  <ion-card style="margin-left: 0;margin-right: 0; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://placehold.it/350x150');
+  background-position: center top;" (click)="gotoDocter()">
+    <div  style="background-color: rgba(1,1,1,0.65);height: 100%; position: absolute; width: 100%" ></div>
+
+    <img src="../../assets/image/docter.jpg" height="170" width="100%" />
+    <div class="card-title">Doctor</div>
+    <div class="card-subtitle">
+      <img src="../../assets/image/doctor-stethoscope.svg" height="50" width="50" margin-top="5%" />
+    </div>
+  </ion-card>
+
+  <ion-card style="margin-left: 0;padding-right: 0;" (click)="gotochem()">
+    <div  style="background-color: rgba(1,1,1,0.65);height: 100%; position: absolute; width: 100%" ></div>
+    <img src="../../assets/image/Chemist.jpg" height="170" width="100%"/>
+    <div class="card-title">Chemist</div>
+    <div class="card-subtitle">
+      <img src="../../assets/image/pills.svg" height="50" width="50" margin-top="5%" />
+    </div>
+  </ion-card>
+
+  <ion-card style="margin-left: 0;padding-right: 0; " (click)="gotopatha()">
+
+    <div  style="background-color: rgba(1,1,1,0.65);height: 100%; position: absolute; width: 100%" ></div>
+
+    <img src="../../assets/image/path.png" height="170"/>
+    <div class="card-title">Pathology</div>
+    <div class="card-subtitle">
+      <img src="../../assets/image/scientist.svg" height="50" width="50" margin-top="5%" />
+
+    </div>
+  </ion-card>
+
 </ion-content>
