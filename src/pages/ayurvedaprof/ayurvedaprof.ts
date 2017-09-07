@@ -1,22 +1,24 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {Content, NavController, NavParams} from 'ionic-angular';
-import {ChemistPage} from "../chemist/chemist";
+import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
- * Generated class for the ChemistprofPage page.
+ * Generated class for the AyurvedaprofPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+
 @Component({
-  selector: 'page-chemistprof',
-  templateUrl: 'chemistprof.html',
+  selector: 'page-ayurvedaprof',
+  templateUrl: 'ayurvedaprof.html',
 })
-export class ChemistprofPage {
+export class AyurvedaprofPage {
+
 
   @ViewChild(Content) content: Content;
-   showheader:boolean=true;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public zone:NgZone) {
+  showheader: boolean = true;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public zone: NgZone) {
   }
 
   ionViewDidLoad() {
@@ -31,19 +33,18 @@ export class ChemistprofPage {
         let scrollTop: number = $event.scrollTop;
         console.log(scrollTop);
 
-        if(scrollTop >100 ){
-          setTimeout(()=>{
-            this.showheader=false;
+        if (scrollTop > 100) {
+          setTimeout(() => {
+            this.showheader = false;
           })
 
         }
-        if(scrollTop<100) {
-          setTimeout(()=>{
-            this.showheader=true;
+        if (scrollTop < 100) {
+          setTimeout(() => {
+            this.showheader = true;
           })
 
         }
-
 
 
       });
@@ -51,6 +52,6 @@ export class ChemistprofPage {
   }
 
   popchem(){
-    this.navCtrl.pop(ChemistPage);
+    this.navCtrl.pop();
   }
 }

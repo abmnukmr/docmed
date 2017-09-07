@@ -9,7 +9,6 @@ import {PathalogyPage} from "../pathalogy/pathalogy";
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-pathoprof',
   templateUrl: 'pathoprof.html',

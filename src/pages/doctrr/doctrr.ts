@@ -1,7 +1,6 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, Content, NavController, NavParams} from 'ionic-angular';
 import {DoctersprofPage} from "../doctersprof/doctersprof";
-import {viewClassName} from "@angular/compiler";
 
 /**
  * Generated class for the DoctrrPage page.
@@ -10,7 +9,6 @@ import {viewClassName} from "@angular/compiler";
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-doctrr',
   templateUrl: 'doctrr.html',

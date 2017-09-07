@@ -1,24 +1,28 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AyurvedaprofPage} from "../ayurvedaprof/ayurvedaprof";
 
 /**
- * Generated class for the MorePage page.
+ * Generated class for the AyurvedalistPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-more',
-  templateUrl: 'more.html',
+  selector: 'page-ayurvedalist',
+  templateUrl: 'ayurvedalist.html',
 })
-export class MorePage {
+export class AyurvedalistPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MorePage');
+    console.log('ionViewDidLoad AyurvedalistPage');
+  }
+  goto(){
+    this.navCtrl.push(AyurvedaprofPage);
   }
 
 }

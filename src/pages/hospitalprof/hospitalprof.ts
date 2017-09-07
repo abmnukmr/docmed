@@ -1,28 +1,36 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {Content, NavController, NavParams} from 'ionic-angular';
-import {ChemistPage} from "../chemist/chemist";
+import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
- * Generated class for the ChemistprofPage page.
+ * Generated class for the HospitalprofPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@Component({
-  selector: 'page-chemistprof',
-  templateUrl: 'chemistprof.html',
-})
-export class ChemistprofPage {
 
+@Component({
+  selector: 'page-hospitalprof',
+  templateUrl: 'hospitalprof.html',
+})
+export class HospitalprofPage {
+
+
+
+
+  showheader:boolean=true;
   @ViewChild(Content) content: Content;
-   showheader:boolean=true;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public zone:NgZone) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public zone:NgZone,public alertCtrl: AlertController) {
+    //this.detescroll();
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ChemistprofPage');
+    console.log('ionViewDidLoad DoctrrPage');
   }
 
+  gob(){
+    this.navCtrl.pop()
+     }
 
   ngAfterViewInit() {
     this.zone.run(() => {
@@ -50,7 +58,6 @@ export class ChemistprofPage {
     });
   }
 
-  popchem(){
-    this.navCtrl.pop(ChemistPage);
-  }
+
+
 }

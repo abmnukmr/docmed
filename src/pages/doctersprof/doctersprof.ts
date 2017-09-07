@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Content,  NavController, NavParams} from 'ionic-angular';
 import {DoctrrPage} from "../doctrr/doctrr";
 
 /**
@@ -9,7 +9,6 @@ import {DoctrrPage} from "../doctrr/doctrr";
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-doctersprof',
   templateUrl: 'doctersprof.html',

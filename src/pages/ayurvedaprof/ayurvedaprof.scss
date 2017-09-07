@@ -1,5 +1,13 @@
-page-home {
+page-ayurvedaprof {
+  .paralaxed {
 
+  }
+
+  .main_content {
+    width: 100%;
+    background-color: white;
+    position: absolute;
+  }
 
 
   ion-card {
@@ -10,6 +18,7 @@ page-home {
   .card-title {
     position: absolute;
     top: 36%;
+    left: 6%;
     font-size: 2.0em;
     width: 100%;
     font-weight: bold;
@@ -23,9 +32,5 @@ page-home {
     width: 100%;
     color: #fff;
   }
-  .card{
-    margin: 0%;
-  }
-
 
 }

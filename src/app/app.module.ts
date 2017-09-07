@@ -2,15 +2,12 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {MorePageModule} from "../pages/more/more.module";
 import {MorePage} from "../pages/more/more";
 import {DocterPage} from "../pages/docter/docter";
 import {ChemistPage} from "../pages/chemist/chemist";
@@ -21,6 +18,14 @@ import {DoctrrPage} from "../pages/doctrr/doctrr";
 import {ElasticHeader} from "../directives/elastic-header/elastic-header";
 import {ChemistprofPage} from "../pages/chemistprof/chemistprof";
 import {PathoprofPage} from "../pages/pathoprof/pathoprof";
+import {ExpandableHeader} from "../components/expandable-header/expandable-header";
+import {DoctersPage} from "../pages/docters/docters";
+import {UserprofEditPage} from "../pages/userprof-edit/userprof-edit";
+import {DoctorPofPage} from "../pages/doctor-pof/doctor-pof";
+import {HosptalListPage} from "../pages/hosptal-list/hosptal-list";
+import {HospitalprofPage} from "../pages/hospitalprof/hospitalprof";
+import {AyurvedalistPage} from "../pages/ayurvedalist/ayurvedalist";
+import {AyurvedaprofPage} from "../pages/ayurvedaprof/ayurvedaprof";
 
 @NgModule({
   declarations: [
@@ -30,6 +35,8 @@ import {PathoprofPage} from "../pages/pathoprof/pathoprof";
     HomePage,
     TabsPage,
     MorePage,
+    DoctrrPage,
+    DoctorPofPage,
     DocterPage,
     ShrinkHeader,
     DoctrrPage,
@@ -38,9 +45,17 @@ import {PathoprofPage} from "../pages/pathoprof/pathoprof";
     DoctersprofPage,
     ElasticHeader,
     ChemistprofPage,
-    PathoprofPage
+    ExpandableHeader,
+    DoctersPage,
+    HosptalListPage,
+    PathoprofPage,
+    UserprofEditPage,
+    DoctorPofPage,
+    HospitalprofPage,
+    AyurvedalistPage,
+    AyurvedaprofPage
 
-     ],
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
@@ -51,7 +66,6 @@ import {PathoprofPage} from "../pages/pathoprof/pathoprof";
     AboutPage,
     ContactPage,
     HomePage,
-    ChemistPage,
     PathalogyPage,
     TabsPage,
     MorePage,
@@ -59,7 +73,20 @@ import {PathoprofPage} from "../pages/pathoprof/pathoprof";
     ChemistprofPage,
     DoctrrPage,
     DoctersprofPage,
-    PathoprofPage
+    PathoprofPage,
+    ExpandableHeader,
+    DoctersPage,
+    DoctersprofPage,
+    PathoprofPage,
+    UserprofEditPage,
+    DoctorPofPage,
+    DoctrrPage,
+    HospitalprofPage,
+    ChemistPage,
+    HosptalListPage,
+    AyurvedalistPage,
+    AyurvedaprofPage
+
   ],
   providers: [
     StatusBar,

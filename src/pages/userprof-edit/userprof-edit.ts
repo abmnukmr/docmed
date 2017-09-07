@@ -2,23 +2,23 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the MorePage page.
+ * Generated class for the UserprofEditPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-more',
-  templateUrl: 'more.html',
+  selector: 'page-userprof-edit',
+  templateUrl: 'userprof-edit.html',
 })
-export class MorePage {
+export class UserprofEditPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MorePage');
+    console.log('ionViewDidLoad UserprofEditPage');
   }
 
 }
