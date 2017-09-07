@@ -1,5 +1,6 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, Content, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {AurvededitPage} from "../aurvededit/aurvededit";
 
 /**
  * Generated class for the AyurvedaselfprofPage page.
@@ -25,7 +26,7 @@ export class AyurvedaselfprofPage {
   @ViewChild(Content) private _content: Content;
   showheader: boolean = true;
 
-  constructor(public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
+  constructor(public mdl:ModalController,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
   }
 
   ionViewDidLoad() {
@@ -95,6 +96,10 @@ export class AyurvedaselfprofPage {
 
 
 
+  mode(){
+    let modal = this.mdl.create(AurvededitPage)
+    modal.present()
+  }
 
 
   popchem(){

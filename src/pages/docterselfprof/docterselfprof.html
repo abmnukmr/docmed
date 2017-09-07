@@ -25,6 +25,12 @@
 
 
           </button>
+          <button left ion-button clear icon-only   *ngIf="showheader" style="margin-left:70%" item-right (click)="gotoedit()">
+            <ion-icon name="create" color="light"> </ion-icon>
+
+
+          </button>
+
           <!--
 
           <ion-navbar transparent>
@@ -35,7 +41,7 @@
 
       </div>
 
-      <img src="../../assets/image/docter.jpg" height="170" width="100%" />
+      <img src="assets/image/docter.jpg" height="170" width="100%" />
 
 
 
@@ -45,7 +51,6 @@
       <div class="card-title">
 
         <ion-row>
-          <img src="../../assets/image/docter.jpg"  style="height:80px;width: 80px; border-radius:40px; border: 2px solid #ffffff; " />
           <ion-col>
             <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> Dr. Mani Verma</p>
             <p style="color: #ffffff; text-align: left;"> Neuro Sergen  </p>

@@ -1,5 +1,6 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, Content, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {ChemisteditPage} from "../chemistedit/chemistedit";
 
 /**
  * Generated class for the ChemistselfprofPage page.
@@ -16,7 +17,7 @@ export class ChemistselfprofPage {
 
   @ViewChild(Content) content: Content;
   showheader:boolean=true;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
+  constructor(public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
@@ -90,6 +91,9 @@ export class ChemistselfprofPage {
 
 
 
-
+  gotoedit(){
+    let er=this.Mdl.create(ChemisteditPage)
+    er.present()
+  }
 
 }

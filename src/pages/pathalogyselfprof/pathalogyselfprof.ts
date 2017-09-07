@@ -1,5 +1,6 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Content, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {PatheditPage} from "../pathedit/pathedit";
 
 /**
  * Generated class for the PathalogyselfprofPage page.
@@ -15,7 +16,7 @@ import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 export class PathalogyselfprofPage {
   showheader:boolean=true;
   @ViewChild(Content) content: Content;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
+  constructor(public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
     //this.detescroll();
 
   }
@@ -52,5 +53,12 @@ export class PathalogyselfprofPage {
 
       });
     });
+  }
+
+
+
+  gotoedit(){
+    let er=this.Mdl.create(PatheditPage)
+    er.present()
   }
 }

@@ -31,6 +31,11 @@ import {DocterselfprofPage} from "../pages/docterselfprof/docterselfprof";
 import {ChemistselfprofPage} from "../pages/chemistselfprof/chemistselfprof";
 import {HospitalselfprofPage} from "../pages/hospitalselfprof/hospitalselfprof";
 import {PathalogyselfprofPage} from "../pages/pathalogyselfprof/pathalogyselfprof";
+import {DoceditPage} from "../pages/docedit/docedit";
+import {HospieditPage} from "../pages/hospiedit/hospiedit";
+import {ChemisteditPage} from "../pages/chemistedit/chemistedit";
+import {AurvededitPage} from "../pages/aurvededit/aurvededit";
+import {PatheditPage} from "../pages/pathedit/pathedit";
 
 @NgModule({
   declarations: [
@@ -63,7 +68,13 @@ import {PathalogyselfprofPage} from "../pages/pathalogyselfprof/pathalogyselfpro
     DocterselfprofPage,
     ChemistselfprofPage,
     HospitalselfprofPage,
-    PathalogyselfprofPage
+    PathalogyselfprofPage,
+    DoceditPage,
+    HospieditPage,
+    ChemisteditPage,
+    AurvededitPage,
+    PatheditPage
+
 
 
   ],
@@ -101,7 +112,13 @@ import {PathalogyselfprofPage} from "../pages/pathalogyselfprof/pathalogyselfpro
     DocterselfprofPage,
     ChemistselfprofPage,
     HospitalselfprofPage,
-    PathalogyselfprofPage
+    PathalogyselfprofPage,
+    DoceditPage,
+    HospieditPage,
+    ChemisteditPage,
+    AurvededitPage,
+    PatheditPage
+
 
   ],
   providers: [
