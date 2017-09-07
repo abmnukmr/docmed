@@ -1,5 +1,5 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the AyurvedaprofPage page.
@@ -18,7 +18,7 @@ export class AyurvedaprofPage {
   @ViewChild(Content) content: Content;
   showheader: boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public zone: NgZone) {
+  constructor(public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
   }
 
   ionViewDidLoad() {
@@ -50,6 +50,45 @@ export class AyurvedaprofPage {
       });
     });
   }
+
+  showCheckbox() {
+    let prompt = this.alertCtrl.create({
+      title: 'Delivery Confirmation',
+      message: "",
+      inputs: [
+        {
+          name: 'Email',
+          placeholder: 'Email',
+        },
+        {
+          name: 'orderId',
+          placeholder: 'orderId',
+        },
+
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Delivered',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
+
+
+
+
+
 
   popchem(){
     this.navCtrl.pop();

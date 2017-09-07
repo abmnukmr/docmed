@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {ChemistprofPage} from "../chemistprof/chemistprof";
 
 /**
@@ -15,7 +15,7 @@ import {ChemistprofPage} from "../chemistprof/chemistprof";
 })
 export class ChemistPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
@@ -24,5 +24,39 @@ export class ChemistPage {
    gotochemist(){
     this.navCtrl.push(ChemistprofPage);
    }
+
+  showCheckbox() {
+    let prompt = this.alertCtrl.create({
+      title: 'Delivery Confirmation',
+      message: "",
+      inputs: [
+        {
+          name: 'Email',
+          placeholder: 'Email',
+        },
+        {
+          name: 'orderId',
+          placeholder: 'orderId',
+        },
+
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Delivered',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
 
 }
