@@ -1,22 +1,31 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {AlertController, Content, NavController, NavParams} from 'ionic-angular';
-import {ChemistPage} from "../chemist/chemist";
+import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
- * Generated class for the ChemistprofPage page.
+ * Generated class for the AyurvedaselfprofPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@Component({
-  selector: 'page-chemistprof',
-  templateUrl: 'chemistprof.html',
-})
-export class ChemistprofPage {
 
-  @ViewChild(Content) content: Content;
-   showheader:boolean=true;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
+@Component({
+  selector: 'page-ayurvedaselfprof',
+  templateUrl: 'ayurvedaselfprof.html',
+})
+export class AyurvedaselfprofPage {
+  get content(): Content {
+    return this._content;
+  }
+
+  set content(value: Content) {
+    this._content = value;
+  }
+
+
+  @ViewChild(Content) private _content: Content;
+  showheader: boolean = true;
+
+  constructor(public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
   }
 
   ionViewDidLoad() {
@@ -27,33 +36,27 @@ export class ChemistprofPage {
   ngAfterViewInit() {
     this.zone.run(() => {
 
-      this.content.ionScroll.subscribe(($event: any) => {
+      this._content.ionScroll.subscribe(($event: any) => {
         let scrollTop: number = $event.scrollTop;
         console.log(scrollTop);
 
-        if(scrollTop >100 ){
-          setTimeout(()=>{
-            this.showheader=false;
+        if (scrollTop > 100) {
+          setTimeout(() => {
+            this.showheader = false;
           })
 
         }
-        if(scrollTop<100) {
-          setTimeout(()=>{
-            this.showheader=true;
+        if (scrollTop < 100) {
+          setTimeout(() => {
+            this.showheader = true;
           })
 
         }
-
 
 
       });
     });
   }
-
-  popchem(){
-    this.navCtrl.pop(ChemistPage);
-  }
-
 
   showCheckbox() {
     let prompt = this.alertCtrl.create({
@@ -92,4 +95,9 @@ export class ChemistprofPage {
 
 
 
+
+
+  popchem(){
+    this.navCtrl.pop();
+  }
 }

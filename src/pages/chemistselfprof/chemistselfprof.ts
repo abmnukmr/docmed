@@ -1,21 +1,21 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {AlertController, Content, NavController, NavParams} from 'ionic-angular';
-import {ChemistPage} from "../chemist/chemist";
+import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
- * Generated class for the ChemistprofPage page.
+ * Generated class for the ChemistselfprofPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+
 @Component({
-  selector: 'page-chemistprof',
-  templateUrl: 'chemistprof.html',
+  selector: 'page-chemistselfprof',
+  templateUrl: 'chemistselfprof.html',
 })
-export class ChemistprofPage {
+export class ChemistselfprofPage {
 
   @ViewChild(Content) content: Content;
-   showheader:boolean=true;
+  showheader:boolean=true;
   constructor(public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
   }
 
@@ -51,7 +51,7 @@ export class ChemistprofPage {
   }
 
   popchem(){
-    this.navCtrl.pop(ChemistPage);
+    this.navCtrl.pop();
   }
 
 

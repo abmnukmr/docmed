@@ -1,0 +1,151 @@
+<ion-header  [hidden]="showheader">
+  <ion-navbar>
+    <ion-title>
+      Stish Medical store
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content elastic-header no-padding>
+
+  <div class="paralaxed">
+
+
+    <ion-card style="margin-left: 0;margin-right: 0; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://placehold.it/350x150');
+  background-position: center top;" >
+
+      <div  style="background-color: rgba(1,1,1,0.65);height: 100%; position: absolute; width: 100%" >
+
+        <ion-row style="margin-top:3%;">
+
+
+          <button left ion-button clear icon-only (click)="popchem()"  *ngIf="showheader">
+            <ion-icon name="arrow-back" color="light"> </ion-icon>
+
+
+          </button>
+          <!--
+
+          <ion-navbar transparent>
+
+          </ion-navbar>
+      -->
+        </ion-row>
+
+      </div>
+
+      <img src="../../assets/image/Chemist.jpg" height="170" width="100%" />
+
+
+
+
+
+
+      <div class="card-title">
+
+        <ion-row>
+          <ion-col>
+            <p style="margin-top: 0.1%;color: #fff;font-size:large; text-align: left;"> Satish  Medical store</p>
+            <p style="color: #ffffff; text-align: left;"> all type of medicine</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  style="left: 0">
+            <button ion-button icon-only clear>
+              <ion-icon name="pin" color="light"  item-start ></ion-icon>
+            </button>
+          </ion-col>
+
+          <ion-col >
+            <button ion-button icon-only clear>
+
+              <ion-icon name="call" color="light" item-start></ion-icon>
+            </button>
+          </ion-col>
+
+          <ion-col>
+            <button ion-button icon-only clear>
+
+              <ion-icon name="mail" color="light" item-start></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+
+
+        </ion-row>
+
+      </div>
+    </ion-card>
+
+  </div>
+
+
+  <ion-fab right style="margin-top: 37vw;">
+
+    <button ion-fab >  <ion-icon name="cart"></ion-icon>
+    </button>
+
+  </ion-fab>
+  <div class="main_content">
+
+
+
+
+
+
+
+    <ion-list>
+
+      <ion-list-header> Your order</ion-list-header>
+
+
+      <ion-card style="background-color: rgba(253,253,253,0.68)">
+
+        <ion-item>
+          <button ion-button icon-left clear small item-end (click)="showCheckbox()">
+            <ion-icon name="more"></ion-icon>
+          </button>
+          <h2>Marty McFly</h2>
+          <p>November 5, 1955</p>
+        </ion-item>
+        <img src="https://career.webindia123.com/career/options/images/ayurveda.jpg">
+
+
+        <ion-card-content>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
+              <div>deleverd</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="clock"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+
+
+
+
+    </ion-list>
+
+
+
+
+  </div>
+</ion-content>

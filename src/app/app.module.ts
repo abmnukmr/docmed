@@ -26,6 +26,11 @@ import {HosptalListPage} from "../pages/hosptal-list/hosptal-list";
 import {HospitalprofPage} from "../pages/hospitalprof/hospitalprof";
 import {AyurvedalistPage} from "../pages/ayurvedalist/ayurvedalist";
 import {AyurvedaprofPage} from "../pages/ayurvedaprof/ayurvedaprof";
+import {AyurvedaselfprofPage} from "../pages/ayurvedaselfprof/ayurvedaselfprof";
+import {DocterselfprofPage} from "../pages/docterselfprof/docterselfprof";
+import {ChemistselfprofPage} from "../pages/chemistselfprof/chemistselfprof";
+import {HospitalselfprofPage} from "../pages/hospitalselfprof/hospitalselfprof";
+import {PathalogyselfprofPage} from "../pages/pathalogyselfprof/pathalogyselfprof";
 
 @NgModule({
   declarations: [
@@ -53,7 +58,13 @@ import {AyurvedaprofPage} from "../pages/ayurvedaprof/ayurvedaprof";
     DoctorPofPage,
     HospitalprofPage,
     AyurvedalistPage,
-    AyurvedaprofPage
+    AyurvedaprofPage,
+    AyurvedaselfprofPage,
+    DocterselfprofPage,
+    ChemistselfprofPage,
+    HospitalselfprofPage,
+    PathalogyselfprofPage
+
 
   ],
   imports: [
@@ -85,7 +96,12 @@ import {AyurvedaprofPage} from "../pages/ayurvedaprof/ayurvedaprof";
     ChemistPage,
     HosptalListPage,
     AyurvedalistPage,
-    AyurvedaprofPage
+    AyurvedaprofPage,
+    AyurvedaselfprofPage,
+    DocterselfprofPage,
+    ChemistselfprofPage,
+    HospitalselfprofPage,
+    PathalogyselfprofPage
 
   ],
   providers: [
