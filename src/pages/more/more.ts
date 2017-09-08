@@ -10,6 +10,11 @@ import {ChemisteditPage} from "../chemistedit/chemistedit";
 import {HospieditPage} from "../hospiedit/hospiedit";
 import {AurvededitPage} from "../aurvededit/aurvededit";
 import {PatheditPage} from "../pathedit/pathedit";
+import {AdddoctorPage} from "../adddoctor/adddoctor";
+import {AddchemistPage} from "../addchemist/addchemist";
+import {AddhospitalPage} from "../addhospital/addhospital";
+import {AddayurvedaPage} from "../addayurveda/addayurveda";
+import {AddpathaPage} from "../addpatha/addpatha";
 
 /**
  * Generated class for the MorePage page.
@@ -54,24 +59,24 @@ export class MorePage {
 
 
    adddoc(){
-     this.navCtrl.push(DoceditPage);
+     this.navCtrl.push(AdddoctorPage);
 
    }
 
    addchem(){
-     this.navCtrl.push(ChemisteditPage);
+     this.navCtrl.push(AddchemistPage);
    }
 
    addhospi(){
-     this.navCtrl.push(HospieditPage);
+     this.navCtrl.push(AddhospitalPage);
    }
 
    addayu(){
-     this.navCtrl.push(AurvededitPage);
+     this.navCtrl.push(AddayurvedaPage);
    }
 
    addpatha(){
-     this.navCtrl.push(PatheditPage);
+     this.navCtrl.push(AddpathaPage);
    }
 
 }

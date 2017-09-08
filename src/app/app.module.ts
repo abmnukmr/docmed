@@ -36,6 +36,12 @@ import {HospieditPage} from "../pages/hospiedit/hospiedit";
 import {ChemisteditPage} from "../pages/chemistedit/chemistedit";
 import {AurvededitPage} from "../pages/aurvededit/aurvededit";
 import {PatheditPage} from "../pages/pathedit/pathedit";
+import {GoogleloginPage} from "../pages/googlelogin/googlelogin";
+import {AdddoctorPage} from "../pages/adddoctor/adddoctor";
+import {AddhospitalPage} from "../pages/addhospital/addhospital";
+import {AddchemistPage} from "../pages/addchemist/addchemist";
+import {AddayurvedaPage} from "../pages/addayurveda/addayurveda";
+import {AddpathaPage} from "../pages/addpatha/addpatha";
 
 @NgModule({
   declarations: [
@@ -73,7 +79,13 @@ import {PatheditPage} from "../pages/pathedit/pathedit";
     HospieditPage,
     ChemisteditPage,
     AurvededitPage,
-    PatheditPage
+    PatheditPage,
+    GoogleloginPage,
+    AdddoctorPage,
+    AddhospitalPage,
+    AddchemistPage,
+    AddayurvedaPage,
+    AddpathaPage
 
 
 
@@ -117,7 +129,13 @@ import {PatheditPage} from "../pages/pathedit/pathedit";
     HospieditPage,
     ChemisteditPage,
     AurvededitPage,
-    PatheditPage
+    PatheditPage,
+    GoogleloginPage,
+    AdddoctorPage,
+    AddhospitalPage,
+    AddchemistPage,
+    AddayurvedaPage,
+    AddpathaPage
 
 
   ],
