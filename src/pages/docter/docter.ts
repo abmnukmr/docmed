@@ -33,7 +33,7 @@ export class DocterPage {
       'Cardiologist',
       'Gastroenterologist',
       'Psychiatrist',
-      'Ear-Nose-Throast(ENT) Specialist',
+      'Ear-Nose-Throat(ENT) Specialist',
       'Gynecologist/Obstetrician',
       'Neurologist',
       'Urologist',

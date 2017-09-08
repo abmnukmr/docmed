@@ -13,19 +13,95 @@
 
 
 
+  <ion-list>
 
-  <ion-footer style="bottom: 0;" no-padding>
-    <ion-row>
-      <ion-col no-padding>
-        <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin> save</button>
-
-      </ion-col>
+    <ion-item>
+      <ion-input  [(ngModel)]="name" placeholder="Doctor Name" ></ion-input>
+    </ion-item>
 
 
-      <ion-col no-padding>
-        <button ion-button color="danger" style="width:100%;border-radius: 0% " no-margin (click)="cnal()">Cancel</button>
+    <ion-item>
+      <ion-input  [(ngModel)]="experience" placeholder="Experience" ></ion-input>
+    </ion-item>
 
-      </ion-col>
-    </ion-row>
-  </ion-footer>
-</ion-content>
+    <ion-item>
+      <ion-input  [(ngModel)]="fee" placeholder="Fee" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="dlno" placeholder="Dl No." ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Specialization</ion-label>
+      <ion-select  [(ngModel)]="Specialize" placeholder="Specialization">
+        <ion-option value="Opthalmologist">Opthalmologist</ion-option>
+        <ion-option value="Dermatologist">Dermatologist</ion-option>
+        <ion-option value="Cardiologist">Cardiologist</ion-option>
+        <ion-option value="Gastroenterologist">Gastroenterologist</ion-option>
+        <ion-option value="Psychiatrist">Psychiatrist</ion-option>
+        <ion-option value="Ear-Nose-Throat(ENT) Specialist">Ear-Nose-Throat(ENT) Specialist</ion-option>
+        <ion-option value="Gynecologist/Obstetrician">Gynecologist/Obstetrician</ion-option>
+        <ion-option value="Neurologist">Neurologist</ion-option>
+        <ion-option value="Urologist">Urologist</ion-option>
+        <ion-option value="Dentist">Dentist</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea   placeholder="Address" rows="3" #textarea  cols="20" fz-elastic   style="font-size:17px; overflow: scroll; word-break: break-all; margin-bottom:4%; margin-top:4%; white-space:pre-wrap; bottom:0%; height:100%; width:93%;"   type="text"  [(ngModel)]="address"   >
+
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="phoneNo" placeholder="Phone No" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="sundaytime" placeholder="Sunday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Mondaytime" placeholder="Monday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Tuesdaytime" placeholder="Tuesday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Wednesdaytime" placeholder="Wednesday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Thrusdaytime" placeholder="Thrusday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Fridaytime" placeholder="Friday-time" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="Saturdaytime" placeholder="Saturday-time" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea   placeholder="Services" rows="3" #textarea  cols="20" fz-elastic   style="font-size:17px; overflow: scroll; word-break: break-all; margin-bottom:4%; margin-top:4%; white-space:pre-wrap; bottom:0%; height:100%; width:93%;"   type="text"  [(ngModel)]="services"   >
+
+      </ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+
+
+  </ion-content>
+<ion-footer style="bottom: 0;" no-padding>
+  <ion-row>
+    <ion-col no-padding>
+      <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin> save</button>
+
+    </ion-col>
+
+
+    <ion-col no-padding>
+      <button ion-button color="danger" style="width:100%;border-radius: 0% " no-margin (click)="cnal()">Cancel</button>
+
+    </ion-col>
+  </ion-row>
+</ion-footer>
