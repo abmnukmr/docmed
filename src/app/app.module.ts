@@ -42,6 +42,8 @@ import {AddhospitalPage} from "../pages/addhospital/addhospital";
 import {AddchemistPage} from "../pages/addchemist/addchemist";
 import {AddayurvedaPage} from "../pages/addayurveda/addayurveda";
 import {AddpathaPage} from "../pages/addpatha/addpatha";
+import {OrderchemPage} from "../pages/orderchem/orderchem";
+import {OrderaurPage} from "../pages/orderaur/orderaur";
 
 @NgModule({
   declarations: [
@@ -85,7 +87,10 @@ import {AddpathaPage} from "../pages/addpatha/addpatha";
     AddhospitalPage,
     AddchemistPage,
     AddayurvedaPage,
-    AddpathaPage
+    AddpathaPage,
+    OrderchemPage,
+    OrderaurPage
+
 
 
 
@@ -135,7 +140,9 @@ import {AddpathaPage} from "../pages/addpatha/addpatha";
     AddhospitalPage,
     AddchemistPage,
     AddayurvedaPage,
-    AddpathaPage
+    AddpathaPage,
+    OrderchemPage,
+    OrderaurPage
 
 
   ],

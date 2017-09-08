@@ -1,6 +1,7 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, NavController, NavParams} from 'ionic-angular';
 import {ChemistPage} from "../chemist/chemist";
+import {OrderchemPage} from "../orderchem/orderchem";
 
 /**
  * Generated class for the ChemistprofPage page.
@@ -89,7 +90,9 @@ export class ChemistprofPage {
   }
 
 
-
+order(){
+    this.navCtrl.push(OrderchemPage)
+}
 
 
 }
