@@ -10,22 +10,47 @@
 <ion-content no-padding>
 
 
+  <ion-list>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="name" placeholder=" Store Name" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea   placeholder="Address" rows="3" #textarea  cols="20" fz-elastic   style="font-size:17px; overflow: scroll; word-break: break-all; margin-bottom:4%; margin-top:4%; white-space:pre-wrap; bottom:0%; height:100%; width:93%;"   type="text"  [(ngModel)]="address"   >
+
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="location" placeholder=" Geographic location"  ></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input  [(ngModel)]="phon" placeholder="Phone No." type="number"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="DlNo" placeholder="Dl No." ></ion-input>
+    </ion-item>
+  </ion-list>
 
 
 
+  </ion-content>
 
-  <ion-footer style="bottom: 0;" no-padding>
-    <ion-row>
-      <ion-col no-padding>
-        <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin> save</button>
+<ion-footer style="bottom: 0;" no-padding>
+  <ion-row>
+    <ion-col no-padding>
+      <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin> save</button>
 
-      </ion-col>
+    </ion-col>
 
 
-      <ion-col no-padding>
-        <button ion-button color="danger" style="width:100%;border-radius: 0% " no-margin (click)="cnal()">Cancel</button>
+    <ion-col no-padding>
+      <button ion-button color="danger" style="width:100%;border-radius: 0% " no-margin (click)="cnal()">Cancel</button>
 
-      </ion-col>
-    </ion-row>
-  </ion-footer>
-</ion-content>
+    </ion-col>
+  </ion-row>
+</ion-footer>
