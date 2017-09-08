@@ -5,6 +5,11 @@ import {HospitalselfprofPage} from "../hospitalselfprof/hospitalselfprof";
 import {ChemistselfprofPage} from "../chemistselfprof/chemistselfprof";
 import {PathalogyselfprofPage} from "../pathalogyselfprof/pathalogyselfprof";
 import {AyurvedaselfprofPage} from "../ayurvedaselfprof/ayurvedaselfprof";
+import {DoceditPage} from "../docedit/docedit";
+import {ChemisteditPage} from "../chemistedit/chemistedit";
+import {HospieditPage} from "../hospiedit/hospiedit";
+import {AurvededitPage} from "../aurvededit/aurvededit";
+import {PatheditPage} from "../pathedit/pathedit";
 
 /**
  * Generated class for the MorePage page.
@@ -47,5 +52,26 @@ export class MorePage {
    }
 
 
+
+   adddoc(){
+     this.navCtrl.push(DoceditPage);
+
+   }
+
+   addchem(){
+     this.navCtrl.push(ChemisteditPage);
+   }
+
+   addhospi(){
+     this.navCtrl.push(HospieditPage);
+   }
+
+   addayu(){
+     this.navCtrl.push(AurvededitPage);
+   }
+
+   addpatha(){
+     this.navCtrl.push(PatheditPage);
+   }
 
 }
