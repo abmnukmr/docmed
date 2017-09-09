@@ -44,6 +44,10 @@ import {AddayurvedaPage} from "../pages/addayurveda/addayurveda";
 import {AddpathaPage} from "../pages/addpatha/addpatha";
 import {OrderchemPage} from "../pages/orderchem/orderchem";
 import {OrderaurPage} from "../pages/orderaur/orderaur";
+import {Camera} from "@ionic-native/camera";
+import {FilePath} from "@ionic-native/file-path";
+import {FileTransfer, FileTransferError, FileTransferObject} from "@ionic-native/file-transfer";
+import {File} from "@ionic-native/file";
 
 @NgModule({
   declarations: [
@@ -97,7 +101,8 @@ import {OrderaurPage} from "../pages/orderaur/orderaur";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{ tabsHideOnSubPages: true,
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -146,8 +151,8 @@ import {OrderaurPage} from "../pages/orderaur/orderaur";
 
 
   ],
-  providers: [
-    StatusBar,
+  providers: [ Camera,FilePath,File,FileTransfer,FileTransferObject,
+    StatusBar,Geolocation,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
