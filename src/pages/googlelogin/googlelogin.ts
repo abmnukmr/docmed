@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TabsPage} from "../tabs/tabs";
+import {LocationProvider} from "../../providers/location/location";
+import { Geolocation } from '@ionic-native/geolocation';
+import { Diagnostic } from '@ionic-native/diagnostic';
 
 /**
  * Generated class for the GoogleloginPage page.
@@ -14,8 +17,20 @@ import {TabsPage} from "../tabs/tabs";
   templateUrl: 'googlelogin.html',
 })
 export class GoogleloginPage {
+ lati:any;
+ lngi:any;
+  constructor(private diagnostic: Diagnostic,private geolocation: Geolocation,public navCtrl: NavController, public navParams: NavParams,public Loc:LocationProvider) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+
+
+
+
+    console.log(this.Loc.lat+" location" +this.Loc.lng);
+
+
+
   }
 
   ionViewDidLoad() {

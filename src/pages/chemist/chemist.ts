@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, NgZone} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {ChemistprofPage} from "../chemistprof/chemistprof";
+import { Geolocation } from '@ionic-native/geolocation';
+import {LocationProvider} from "../../providers/location/location";
 
 /**
  * Generated class for the ChemistPage page.
@@ -15,7 +17,15 @@ import {ChemistprofPage} from "../chemistprof/chemistprof";
 })
 export class ChemistPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl:AlertController) {
+  lati:any;
+  lngi:any;
+
+  constructor(public zone:NgZone,public Loc:LocationProvider,public navCtrl: NavController, public navParams: NavParams,public alertCtrl:AlertController,private geolocation: Geolocation) {
+
+
+this.lati=this.Loc.lat;
+this.lati=this.Loc.lng
+
   }
 
   ionViewDidLoad() {

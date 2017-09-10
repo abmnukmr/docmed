@@ -48,6 +48,13 @@ import {Camera} from "@ionic-native/camera";
 import {FilePath} from "@ionic-native/file-path";
 import {FileTransfer, FileTransferError, FileTransferObject} from "@ionic-native/file-transfer";
 import {File} from "@ionic-native/file";
+import { LocationProvider } from '../providers/location/location';
+import {Location} from "@angular/common";
+import {Geolocation} from "@ionic-native/geolocation";
+import {Diagnostic} from "@ionic-native/diagnostic";
+import {OpenNativeSettings} from "@ionic-native/open-native-settings";
+import {LocationAccuracy} from "@ionic-native/location-accuracy";
+import {BackgroundGeolocation} from "@ionic-native/background-geolocation";
 
 @NgModule({
   declarations: [
@@ -152,9 +159,10 @@ import {File} from "@ionic-native/file";
 
   ],
   providers: [ Camera,FilePath,File,FileTransfer,FileTransferObject,
-    StatusBar,Geolocation,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    StatusBar,Geolocation,LocationProvider,Diagnostic,OpenNativeSettings,LocationAccuracy,
+    SplashScreen,BackgroundGeolocation,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocationProvider
   ]
 })
 export class AppModule {}
