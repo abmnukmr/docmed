@@ -38,10 +38,16 @@
       <ion-label item-end>Add as Ayurveda and Homeopathy </ion-label>
     </ion-item>
 
+    <ion-item (click)="addhomo()">
+      <ion-icon item-end name="add"></ion-icon>
+      <ion-label item-end> Add as Homeopathy </ion-label>
+    </ion-item>
     <ion-item (click)="addpatha()">
       <ion-icon item-end name="add"></ion-icon>
       <ion-label item-end> Add as Pathalogy </ion-label>
     </ion-item>
+
+
 
   </ion-list>
 
@@ -64,11 +70,17 @@
 
     <ion-item>
     <button ion-fab margin="0.1%" style="background-color:#0a1062" item-start (click)="Aurlog()"><ion-icon name="log-in"></ion-icon></button>
-      <ion-label item-end> Ayurveda and Homeopath Login</ion-label>
+      <ion-label item-end> Ayurveda  Login</ion-label>
     </ion-item>
 
 
-  <ion-item>
+    <ion-item>
+      <button ion-fab margin="0.1%" style="background-color:#621e27" item-start (click)="homlig()"><ion-icon name="log-in"></ion-icon></button>
+      <ion-label item-end> Homeopathy Login</ion-label>
+    </ion-item>
+
+
+    <ion-item>
   <button ion-fab margin="0.1%" style="background-color:#e4e462" item-start (click)="pathalog()"> <ion-icon name="log-in"></ion-icon></button>
     <ion-label item-end> Pathalogy Login</ion-label>
   </ion-item>

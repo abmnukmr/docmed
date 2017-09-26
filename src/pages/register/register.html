@@ -1,0 +1,27 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content padding class="bg">
+
+  <p style="color: rgba(252,252,252,1);font-size:17px; text-align: center;margin-top: 50%;"> Register</p>
+  <div style="width: 100%; height: 40px;padding-left: 1%; border-left: 1px solid white ; border-right:1px solid white; border-top: 1px solid white;  background-color: rgba(244,248,255,0.29);">
+    <ion-input [(ngModel)]="emaill" placeholder="Email" type="email" style="color: #fdfdff;" ></ion-input>
+  </div>
+  <div style="width: 100%; height: 40px; padding-left: 2%; border-left: 1px solid white ; border-right:1px solid white; border-top: 1px solid white;border-bottom: 1px solid white; background-color: rgba(244,248,255,0.29);">
+    <ion-input [(ngModel)]="password" placeholder="Password" type="password" style="color: #fdfdff;"></ion-input>
+  </div>
+
+  <button ion-button  outline   color="light" block  (click)="gotto(emaill,password)" style="margin-top: 20px;"> Register  </button>
+
+
+  <button ion-button icon-only clear style="margin-left: 47%;margin-top: 12%" (click)=" getcan()" >
+    <ion-icon name="md-close" color="light"></ion-icon>
+  </button>
+
+</ion-content>

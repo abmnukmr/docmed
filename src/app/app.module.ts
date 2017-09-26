@@ -55,6 +55,35 @@ import {Diagnostic} from "@ionic-native/diagnostic";
 import {OpenNativeSettings} from "@ionic-native/open-native-settings";
 import {LocationAccuracy} from "@ionic-native/location-accuracy";
 import {BackgroundGeolocation} from "@ionic-native/background-geolocation";
+import { AuthenticationProvider } from '../providers/authentication/authentication';
+import {AngularFireModule} from "angularfire2";
+
+import * as firebase from "firebase";
+import {GooglePlus} from "@ionic-native/google-plus";
+import {RegisterPage} from "../pages/register/register";
+import {ForgetPage} from "../pages/forget/forget";
+import {HttpModule} from "@angular/http";
+import {HomeoaddPage} from "../pages/homeoadd/homeoadd";
+import {HomeoprofPage} from "../pages/homeoprof/homeoprof";
+import {HomeoPage} from "../pages/homeo/homeo";
+import {HomeoeditPage} from "../pages/homeoedit/homeoedit";
+import {HomeroselfPage} from "../pages/homeroself/homeroself";
+
+
+export const firebaseConfig = {
+
+  apiKey: "AIzaSyBFGsP9ipHgTyeOaW54xhZ-jLXUcXGuTpo",
+  authDomain: "docmed-72c0e.firebaseapp.com",
+  databaseURL: "https://docmed-72c0e.firebaseio.com",
+  projectId: "docmed-72c0e",
+  storageBucket: "docmed-72c0e.appspot.com",
+  messagingSenderId: "249434387922"
+};
+
+
+
+firebase.initializeApp(firebaseConfig);
+
 
 @NgModule({
   declarations: [
@@ -100,16 +129,26 @@ import {BackgroundGeolocation} from "@ionic-native/background-geolocation";
     AddayurvedaPage,
     AddpathaPage,
     OrderchemPage,
-    OrderaurPage
-
+    OrderaurPage,
+    RegisterPage,
+    ForgetPage,
+    HomeoaddPage,
+    HomeoprofPage,
+    HomeoPage,
+    HomeoeditPage,
+    HomeroselfPage
 
 
 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{ tabsHideOnSubPages: true,
-    })
+    HttpModule,
+
+    IonicModule.forRoot(MyApp,{ tabsHideOnSubPages: false,
+    }),
+    AngularFireModule.initializeApp(firebaseConfig),
+  //  AngularFireAuth
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -154,15 +193,27 @@ import {BackgroundGeolocation} from "@ionic-native/background-geolocation";
     AddayurvedaPage,
     AddpathaPage,
     OrderchemPage,
-    OrderaurPage
+    OrderaurPage,
+    RegisterPage,
+    ForgetPage,
+    HomeoaddPage,
+    HomeoprofPage,
+    HomeoPage,
+    HomeoeditPage,
+    HomeroselfPage
+
+
+
+
 
 
   ],
   providers: [ Camera,FilePath,File,FileTransfer,FileTransferObject,
     StatusBar,Geolocation,LocationProvider,Diagnostic,OpenNativeSettings,LocationAccuracy,
-    SplashScreen,BackgroundGeolocation,
+    SplashScreen,BackgroundGeolocation,GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LocationProvider
+    LocationProvider,
+    AuthenticationProvider
   ]
 })
 export class AppModule {}

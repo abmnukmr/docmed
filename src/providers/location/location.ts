@@ -35,7 +35,8 @@ export class LocationProvider {
       desiredAccuracy: 0,
       stationaryRadius: 20,
       distanceFilter: 10,
-      debug: true,
+      debug: false,
+      notificationTitle:"MED7",
       interval: 2000
     };
 

@@ -58,7 +58,7 @@ export class DocterPage {
 
 
   gotoprof(e){
-    this.navCtrl.push(DoctersprofPage);
+    this.navCtrl.push(DoctersprofPage,{"cata":e});
   }
 
 

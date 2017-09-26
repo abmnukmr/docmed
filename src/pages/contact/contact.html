@@ -11,54 +11,7 @@
 
   <div class="paralaxed">
 
-<ion-list>
-
-  <ion-list-header>
-  My Order
-  </ion-list-header>
-  <ion-card style="background-color: rgba(253,253,253,0.68)">
-
-    <ion-item>
-      <button ion-button icon-left clear small item-end (click)="showCheckbox()">
-        <ion-icon name="more"></ion-icon>
-      </button>
-      <h2>Marty McFly</h2>
-      <p>November 5, 1955</p>
-    </ion-item>
-    <img src="https://career.webindia123.com/career/options/images/ayurveda.jpg">
-
-
-    <ion-card-content>
-      <p>
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
-      </p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
-          <div>deleverd</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="clock"></ion-icon>
-          <div>4 Comments</div>
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-card>
-
-
-
-</ion-list>
-
-
-
-
+    <h6 margin-top="80px">{{email}}</h6>
 
   </div>
 
@@ -66,7 +19,7 @@
 </ion-content>
 <ion-footer no-border>
   <ion-row >
-    <button ion-button icon-only clear>
+    <button ion-button icon-only clear (click)="logout()">
 
       <ion-icon name="log-out" color="danger"></ion-icon> Logout
 

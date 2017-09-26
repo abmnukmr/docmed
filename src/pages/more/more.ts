@@ -15,6 +15,8 @@ import {AddchemistPage} from "../addchemist/addchemist";
 import {AddhospitalPage} from "../addhospital/addhospital";
 import {AddayurvedaPage} from "../addayurveda/addayurveda";
 import {AddpathaPage} from "../addpatha/addpatha";
+import {HomeoaddPage} from "../homeoadd/homeoadd";
+import {HomeroselfPage} from "../homeroself/homeroself";
 
 /**
  * Generated class for the MorePage page.
@@ -55,6 +57,9 @@ export class MorePage {
    Aurlog(){
     this.navCtrl.push(AyurvedaselfprofPage);
    }
+   homlig(){
+     this.navCtrl.push(HomeroselfPage);
+   }
 
 
 
@@ -79,4 +84,7 @@ export class MorePage {
      this.navCtrl.push(AddpathaPage);
    }
 
+  addhomo(){
+     this.navCtrl.push(HomeoaddPage);
+  }
 }

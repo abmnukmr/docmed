@@ -28,7 +28,7 @@
 
 
     <ion-item>
-      <ion-input  [(ngModel)]="phon" placeholder="Phone No." type="number"> </ion-input>
+      <ion-input  [(ngModel)]="phone" placeholder="Phone No." type="number"> </ion-input>
     </ion-item>
 
     <ion-item>
@@ -43,7 +43,7 @@
 <ion-footer style="bottom: 0;" no-padding>
   <ion-row>
     <ion-col no-padding>
-      <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin> save</button>
+      <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin (click)="updatedata()"> save</button>
 
     </ion-col>
 

@@ -1,6 +1,8 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, NavController, NavParams} from 'ionic-angular';
 import {DoctersprofPage} from "../doctersprof/doctersprof";
+import {Http} from "@angular/http";
+import {LocationProvider} from "../../providers/location/location";
 
 /**
  * Generated class for the DoctrrPage page.
@@ -15,10 +17,24 @@ import {DoctersprofPage} from "../doctersprof/doctersprof";
 })
 export class DoctrrPage {
   showheader:boolean=true;
+  shovaL:any;
+  data:any;
+  getemail:any;
   @ViewChild(Content) content: Content;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public zone:NgZone,public alertCtrl: AlertController) {
-    //this.detescroll();
 
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider,public zone:NgZone,public alertCtrl: AlertController) {
+
+
+
+    console.log("Abhimnayu");
+
+    this.load(this.getemail);
+  }
+
+
+  getdata(){
+    this.shovaL=this.navParams.get("email")
   }
 
   ionViewDidLoad() {
@@ -54,6 +70,48 @@ export class DoctrrPage {
      });
    });
  }
+
+
+
+
+
+
+
+  load(em)
+  {
+
+    if(this.data) {
+
+      return new Promise(resolve => {
+
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/chemist/list').map(res => res.json()).subscribe(data => {
+
+
+          resolve(this.data);
+          console.log(this.data)
+
+        });
+
+      });
+    }
+
+    return new Promise(resolve => {
+
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/chemist/list').map(res => res.json()).subscribe(data => {
+
+
+
+
+
+        resolve(this.data);
+        console.log(this.data)
+      });
+
+    });
+
+
+
+  }
 
 
 }
