@@ -29,7 +29,7 @@ export class PathalogyPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PathalogyPage');
   }
-  gotoprof(em){
+  goto(em){
     this.navCtrl.push(PathoprofPage,{"email":em});
   }
 

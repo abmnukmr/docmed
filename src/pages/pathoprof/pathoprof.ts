@@ -1,6 +1,7 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {PathalogyPage} from "../pathalogy/pathalogy";
+import {Http} from "@angular/http";
 
 /**
  * Generated class for the PathoprofPage page.
@@ -15,10 +16,11 @@ import {PathalogyPage} from "../pathalogy/pathalogy";
 })
 export class PathoprofPage {
   showheader:boolean=true;
+  data:any;
   @ViewChild(Content) content: Content;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
+  constructor(public http:Http,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
     //this.detescroll();
-
+  this.load(this.navParams.get("email"))
   }
 
   ionViewDidLoad() {
@@ -54,4 +56,46 @@ export class PathoprofPage {
       });
     });
   }
+
+
+
+
+  load(em)
+  {
+
+
+
+    if(this.data) {
+
+      return new Promise(resolve => {
+
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/pathalogy/'+em).map(res => res.json()).subscribe(data => {
+          this.data = data
+          resolve(this.data);
+          // this.chemist=data
+          console.log(this.data)
+        });
+
+      });
+    }
+
+    return new Promise(resolve => {
+
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/pathalogy/'+em).map(res => res.json()).subscribe(data => {
+
+        this.data = data
+        resolve(this.data);
+        // this.chemist=data;
+        console.log(this.data)
+
+      });
+
+    });
+
+
+
+  }
+
+
+
 }

@@ -28,8 +28,8 @@ export class HomeoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AyurvedalistPage');
   }
-  goto(){
-    this.navCtrl.push(HomeoprofPage);
+  goto(em){
+    this.navCtrl.push(HomeoprofPage,{"email":em});
   }
 
 

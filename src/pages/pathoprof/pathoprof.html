@@ -1,7 +1,7 @@
 <ion-header  [hidden]="showheader">
   <ion-navbar>
     <ion-title>
-      Stish Medical store
+      {{data?.name}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -46,8 +46,8 @@
 
         <ion-row>
           <ion-col>
-            <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> Om Pathalogy centre</p>
-            <p style="color: #ffffff; text-align: left;"> Daigonosis centre </p>
+            <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> {{data?.name}}</p>
+            <p style="color: #ffffff; text-align: left;"> {{data?.address}} </p>
           </ion-col>
 
         </ion-row>
@@ -71,7 +71,7 @@
       <ion-item>
         <ion-icon name="phone-portrait" color="secondary" item-start></ion-icon>
         <ion-label style="color:#1599ba; margin-left: 5%;"> Phone No </ion-label>
-        <ion-label style="color:#010101; margin-left: 5%;" item-end> 9898988998  </ion-label>
+        <ion-label style="color:#010101; margin-left: 5%;" item-end> {{data?.phone}}  </ion-label>
       </ion-item>
 
 
@@ -79,7 +79,7 @@
       <ion-item>
         <ion-icon name="mail" color="bl" item-start></ion-icon>
         <ion-label style="color:#1599ba; margin-left: 5%;">Email</ion-label>
-        <ion-label style="color:#010101; margin-left: 5%;" item-end> 9898988998  </ion-label>
+        <ion-label style="color:#010101; margin-left: 5%;" item-end> {{data?.email}} </ion-label>
       </ion-item>
 
     </ion-list>
