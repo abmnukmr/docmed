@@ -15,17 +15,15 @@
 
 <ion-content no-padding>
   <ion-list>
-    <ion-item (click)="gotochemist()" *ngFor="let item of data">
-      <h1>{{item.name}}</h1>
+    <ion-item (click)="gotochemist(item.email)" *ngFor="let item of data">
+      <h3 style="color: #00baba"><b>{{item.name}}</b></h3>
 
       <ion-row>
         <ion-icon name="pin" color="primary"></ion-icon>
-        <h6 margin-left="0.1%">{{ item.address}}</h6>
+        <p margin-left="0.1%">{{ item.address}}</p>
       </ion-row>
 
-
     </ion-item>
-
 
   </ion-list>
 

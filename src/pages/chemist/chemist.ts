@@ -33,8 +33,8 @@ data:any;
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChemistPage');
   }
-   gotochemist(){
-    this.navCtrl.push(ChemistprofPage);
+   gotochemist(email){
+    this.navCtrl.push(ChemistprofPage,{"email":email});
    }
 
 

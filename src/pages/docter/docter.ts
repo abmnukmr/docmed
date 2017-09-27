@@ -28,17 +28,14 @@ export class DocterPage {
 
   initializeItems() {
     this.items = [
-      'Opthalmologist',
-      'Dermatologist',
-      'Cardiologist',
-      'Gastroenterologist',
-      'Psychiatrist',
-      'Ear-Nose-Throat(ENT) Specialist',
-      'Gynecologist/Obstetrician',
-      'Neurologist',
-      'Urologist',
-      'Dentist'
-    ];
+'General Physician', 'Ent(Ear-Nose-Throat)', 'Dermatologist', 'Opthalmology','Paediatrics',
+  'Diabetology',
+  'Nutritionist' , 'Gastroentrology',  'Gyanaecology $ Obsterics', 'Cardiologist',
+  'Neurology', 'Nephorologist', 'Orthopaedics' ,'Urologist',
+  'Hair Fall', 'Dentist', 'Phychologist', 'Psychiatrist', 'Hair Transplant',
+  'Radiologist' ,'Allergist', 'Geriatrician' ,'Hematologist', 'Hepatologist Infertility'
+
+  ];
   }
 
   getItems(ev: any) {

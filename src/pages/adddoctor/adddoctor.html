@@ -35,17 +35,9 @@
     <ion-item>
       <ion-label>Specialization</ion-label>
       <ion-select  [(ngModel)]="Specialize" placeholder="Specialization">
-        <ion-option value="Opthalmologist">Opthalmologist</ion-option>
-        <ion-option value="Dermatologist">Dermatologist</ion-option>
-        <ion-option value="Cardiologist">Cardiologist</ion-option>
-        <ion-option value="Gastroenterologist">Gastroenterologist</ion-option>
-        <ion-option value="Psychiatrist">Psychiatrist</ion-option>
-        <ion-option value="Ear-Nose-Throat(ENT) Specialist">Ear-Nose-Throat(ENT) Specialist</ion-option>
-        <ion-option value="Gynecologist/Obstetrician">Gynecologist/Obstetrician</ion-option>
-        <ion-option value="Neurologist">Neurologist</ion-option>
-        <ion-option value="Urologist">Urologist</ion-option>
-        <ion-option value="Dentist">Dentist</ion-option>
-      </ion-select>
+        <ion-option value={{it}} *ngFor="let it of items">{{it}}</ion-option>
+
+          </ion-select>
     </ion-item>
 
     <ion-item>

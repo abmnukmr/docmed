@@ -2,6 +2,7 @@ import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, NavController, NavParams} from 'ionic-angular';
 import {ChemistPage} from "../chemist/chemist";
 import {OrderchemPage} from "../orderchem/orderchem";
+import {Http} from "@angular/http";
 
 /**
  * Generated class for the ChemistprofPage page.
@@ -15,12 +16,25 @@ import {OrderchemPage} from "../orderchem/orderchem";
 })
 export class ChemistprofPage {
 
+  chemist:any;
   @ViewChild(Content) content: Content;
    showheader:boolean=true;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
+   data:any;
+  // name:any;
+   ch:any=[{"name":"sadjas"}]
+   emailchem:any;
+  constructor(public navCtrl: NavController, public http:Http,public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
+
+
+    this.emailchem=navParams.get("email");
+    this.load(this.emailchem);
+     console.log(this.emailchem)
   }
 
   ionViewDidLoad() {
+    //this.load(this.emailchem);
+
+
     console.log('ionViewDidLoad ChemistprofPage');
   }
 
@@ -93,6 +107,43 @@ export class ChemistprofPage {
 order(){
     this.navCtrl.push(OrderchemPage)
 }
+
+
+
+
+  load(email)
+  {
+
+    if(this.data) {
+
+      return new Promise(resolve => {
+
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/chemist/'+email).map(res => res.json()).subscribe(data => {
+          this.data = data
+          resolve(this.data);
+         // this.chemist=data
+         console.log(this.data)
+        });
+
+      });
+    }
+
+    return new Promise(resolve => {
+
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/chemist/'+email).map(res => res.json()).subscribe(data => {
+
+        this.data = data
+        resolve(this.data);
+       // this.chemist=data;
+        console.log(this.data)
+
+      });
+
+    });
+
+
+
+  }
 
 
 }

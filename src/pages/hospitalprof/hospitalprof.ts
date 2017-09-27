@@ -1,5 +1,6 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Http} from "@angular/http";
 
 /**
  * Generated class for the HospitalprofPage page.
@@ -14,14 +15,14 @@ import {AlertController, Content, IonicPage, NavController, NavParams} from 'ion
 })
 export class HospitalprofPage {
 
-
+ data:any;
 
 
   showheader:boolean=true;
   @ViewChild(Content) content: Content;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public zone:NgZone,public alertCtrl: AlertController) {
+  constructor(public http:Http,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone,public alertCtrl: AlertController) {
     //this.detescroll();
-
+  this.load(this.navParams.get("email"));
   }
 
   ionViewDidLoad() {
@@ -56,6 +57,43 @@ export class HospitalprofPage {
 
       });
     });
+  }
+
+
+  load(em)
+  {
+
+
+
+    if(this.data) {
+
+      return new Promise(resolve => {
+
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/hospital/'+em).map(res => res.json()).subscribe(data => {
+          this.data = data
+          resolve(this.data);
+          // this.chemist=data
+          console.log(this.data)
+        });
+
+      });
+    }
+
+    return new Promise(resolve => {
+
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/hospital/'+em).map(res => res.json()).subscribe(data => {
+
+        this.data = data
+        resolve(this.data);
+        // this.chemist=data;
+        console.log(this.data)
+
+      });
+
+    });
+
+
+
   }
 
 

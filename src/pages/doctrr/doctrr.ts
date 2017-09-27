@@ -19,17 +19,18 @@ export class DoctrrPage {
   showheader:boolean=true;
   shovaL:any;
   data:any;
+  emilsearch:any
   getemail:any;
   @ViewChild(Content) content: Content;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider,public zone:NgZone,public alertCtrl: AlertController) {
 
+  this.emilsearch=navParams.get("email");
 
+    console.log(this.emilsearch);
 
-    console.log("Abhimnayu");
-
-    this.load(this.getemail);
+    this.load(this.emilsearch);
   }
 
 
@@ -80,16 +81,17 @@ export class DoctrrPage {
   load(em)
   {
 
+
+
     if(this.data) {
 
       return new Promise(resolve => {
 
-        this.http.get('https://quiet-ridge-46090.herokuapp.com/chemist/list').map(res => res.json()).subscribe(data => {
-
-
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/doctor/'+em).map(res => res.json()).subscribe(data => {
+          this.data = data
           resolve(this.data);
+          // this.chemist=data
           console.log(this.data)
-
         });
 
       });
@@ -97,14 +99,13 @@ export class DoctrrPage {
 
     return new Promise(resolve => {
 
-      this.http.get('https://quiet-ridge-46090.herokuapp.com/chemist/list').map(res => res.json()).subscribe(data => {
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/doctor/'+em).map(res => res.json()).subscribe(data => {
 
-
-
-
-
+        this.data = data
         resolve(this.data);
+        // this.chemist=data;
         console.log(this.data)
+
       });
 
     });
@@ -112,7 +113,6 @@ export class DoctrrPage {
 
 
   }
-
 
 }
 

@@ -1,6 +1,8 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {DoceditPage} from "../docedit/docedit";
+import {Http} from "@angular/http";
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the DocterselfprofPage page.
@@ -15,11 +17,13 @@ import {DoceditPage} from "../docedit/docedit";
 })
 export class DocterselfprofPage {
   showheader: boolean = true;
+  data:any;
+  emailsearch:any;
   @ViewChild(Content) content: Content;
 
-  constructor(public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public alertCtrl: AlertController) {
+  constructor(public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public alertCtrl: AlertController) {
     //this.detescroll();
-
+  this.load();
   }
 
   ionViewDidLoad() {
@@ -58,4 +62,49 @@ export class DocterselfprofPage {
     let er=this.Mdl.create(DoceditPage)
     er.present()
   }
+
+
+  load()
+  {
+
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      var  name = user.displayName;
+      this.emailsearch = user.email;
+      var  photoUrl = user.photoURL;
+    }
+
+
+    if(this.data) {
+
+      return new Promise(resolve => {
+
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/doctor/'+this.emailsearch).map(res => res.json()).subscribe(data => {
+          this.data = data
+          resolve(this.data);
+          // this.chemist=data
+          console.log(this.data)
+        });
+
+      });
+    }
+
+    return new Promise(resolve => {
+
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/doctor/'+this.emailsearch).map(res => res.json()).subscribe(data => {
+
+        this.data = data
+        resolve(this.data);
+        // this.chemist=data;
+        console.log(this.data)
+
+      });
+
+    });
+
+
+
+  }
+
+
 }

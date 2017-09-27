@@ -36,6 +36,7 @@ export class AdddoctorPage {
   Saturdaytime:any;
   services:any;
   email1:any;
+  items:any;
   loading:any;
   constructor(public http:Http,public Loc:LocationProvider,public navCtrl: NavController, public navParams: NavParams,public loadingCtrl:LoadingController) {
     this.location=this.Loc.lng+ ","+this.Loc.lng;
@@ -43,6 +44,16 @@ export class AdddoctorPage {
       content:"wait..."
     });
 
+
+    this.items = [
+      'General Physician', 'Ent(Ear-Nose-Throat)', 'Dermatologist', 'Opthalmology','Paediatrics',
+      'Diabetology',
+      'Nutritionist' , 'Gastroentrology',  'Gyanaecology $ Obsterics', 'Cardiologist',
+      'Neurology', 'Nephorologist', 'Orthopaedics' ,'Urologist',
+      'Hair Fall', 'Dentist', 'Phychologist', 'Psychiatrist', 'Hair Transplant',
+      'Radiologist' ,'Allergist', 'Geriatrician' ,'Hematologist', 'Hepatologist Infertility'
+
+    ];
   }
 
   ionViewDidLoad() {
@@ -85,7 +96,8 @@ export class AdddoctorPage {
       "wed_time":this.Wednesdaytime,
       "thu_time":this.Thrusdaytime,
       "fri_time": this.Fridaytime,
-      "sat_time":this.Saturdaytime
+      "sat_time":this.Saturdaytime,
+      "services":this.services
     }
     console.log("updated start");
     var headers = new Headers();

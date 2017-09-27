@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {Http, RequestOptions,Headers} from "@angular/http";
 import {LocationProvider} from "../../providers/location/location";
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the AddchemistPage page.

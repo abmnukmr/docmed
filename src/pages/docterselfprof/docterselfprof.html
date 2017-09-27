@@ -1,7 +1,7 @@
 <ion-header  [hidden]="showheader">
   <ion-navbar>
     <ion-title>
-      Dr. Mani Verma
+      {{data?.name}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -52,8 +52,8 @@
 
         <ion-row>
           <ion-col>
-            <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> Dr. Mani Verma</p>
-            <p style="color: #ffffff; text-align: left;"> Neuro Sergen  </p>
+            <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> {{data?.name}}</p>
+            <p style="color: #ffffff; text-align: left;">{{data?.spl}} </p>
           </ion-col>
 
         </ion-row>
@@ -74,23 +74,23 @@
 
 
         <ion-label item-start> Experience </ion-label>
-        <ion-label item-end> 12 yr </ion-label>
+        <ion-label item-end> {{data?.exper}} </ion-label>
       </ion-item>
       <ion-item>
         <ion-icon name="pricetag" color="primary" item-left></ion-icon>
 
         <ion-label item-start> Fee </ion-label>
-        <ion-label item-end> 12 yr </ion-label>
+        <ion-label item-end> {{data?.fee}}</ion-label>
       </ion-item>
       <ion-item>
         <ion-icon name="ribbon" color="yel" item-left ></ion-icon>
         <ion-label item-start>  Specialization</ion-label>
-        <ion-label item-end> 12 yr </ion-label>
+        <ion-label item-end> {{data?.spl}} </ion-label>
       </ion-item>
       <ion-item>
         <ion-icon name="pin" color="secondary"  item-left ></ion-icon>
         <ion-label item-start>Location</ion-label>
-
+        <p>{{data?.lat}},{{data?.lng}}</p>
         <ion-label item-end> get Direction  </ion-label>
 
       </ion-item>
@@ -102,54 +102,50 @@
       <div>
         <ion-item>
           <ion-icon name="ios-clock-outline" item-start></ion-icon>
-          <p style="color: #007aff">  Sunday </p> 9:00 am to 7:00 pm
+          <p style="color: #007aff">  Sunday </p> {{data?.sun_time}}
         </ion-item>
         <ion-item>
           <ion-icon name="ios-clock-outline" item-start></ion-icon>
-          <p style="color: #007aff"> Monday</p> 9:00 am to 7:00 pm
+          <p style="color: #007aff"> Monday</p> {{data?.mon_time}}
         </ion-item>
         <ion-item>
           <ion-icon name="ios-clock-outline" item-start></ion-icon>
-          <p style="color: #007aff"> Tuesday</p> 9:00 am to 7:00 pm
+          <p style="color: #007aff"> Tuesday</p> {{data?.tue_time}}
         </ion-item>
         <ion-item>
           <ion-icon name="ios-clock-outline" item-start></ion-icon>
-          <p style="color: #007aff"> Wednesday </p>9:00 am to 7:00 pm
+          <p style="color: #007aff"> Wednesday </p>{{data?.wed_time}}
         </ion-item>
         <ion-item>
           <ion-icon name="ios-clock-outline" item-start></ion-icon>
-          <p style="color: #007aff"> Thrusday</p> 9:00 am to 7:00 pm
+          <p style="color: #007aff"> Thrusday</p> {{data?.thu_time}}
         </ion-item>
         <ion-item>
           <ion-icon name="ios-clock-outline" item-start></ion-icon>
-          <p style="color: #007aff">Friday</p> 9:00 am to 7:00 pm
+          <p style="color: #007aff">Friday</p> {{data?.fri_time}}
         </ion-item>
 
         <ion-item>
           <ion-icon name="ios-clock-outline" item-start></ion-icon>
-          <p style="color: #007aff"> Saturday </p> 9:00 am to 7:00 pm
+          <p style="color: #007aff"> Saturday </p> {{data?.sat_time}}
         </ion-item>
       </div>
       <ion-list-header>
         <p style="color: #ff4099"> License No.</p>
       </ion-list-header>
       <p style="white-space: pre; display: list-item; padding-left:2%; ">
-        dsds;k;fldkgdfl;hkl;dfs
+        {{data?.lic_no}}
       </p>
 
       <ion-list-header>
         <p style="color: #ff4099">  Services</p>
       </ion-list-header>
       <p style="white-space: pre; display: list-item; padding-left:2%; ">
-        dsds;k;fldkgdfl;hkl;dfs
+        {{data?.services}}
       </p>
 
     </ion-list>
   </div>
+  <p>{{data?.phone}}</p>
 
 </ion-content>
-<ion-footer  no-border no-lines no-padding transparent>
-  <button ion-button full color="danger"> Call</button>
-
-
-</ion-footer>
