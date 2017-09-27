@@ -2,7 +2,8 @@ import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {AurvededitPage} from "../aurvededit/aurvededit";
 import {HomeoeditPage} from "../homeoedit/homeoedit";
-
+import {Http} from "@angular/http";
+import  *as firebase from 'firebase'
 /**
  * Generated class for the HomeroselfPage page.
  *
@@ -15,7 +16,7 @@ import {HomeoeditPage} from "../homeoedit/homeoedit";
   templateUrl: 'homeroself.html',
 })
 export class HomeroselfPage {
-
+   data:any;
   get content(): Content {
     return this._content;
   }
@@ -27,8 +28,18 @@ export class HomeroselfPage {
 
   @ViewChild(Content) private _content: Content;
   showheader: boolean = true;
+   emailsearch:any;
+  constructor(public http:Http,public mdl:ModalController,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
 
-  constructor(public mdl:ModalController,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
+
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      var  name = user.displayName;
+      this.emailsearch = user.email;
+      var  photoUrl = user.photoURL;
+    }
+    this.load(this.emailsearch);
+
   }
 
   ionViewDidLoad() {
@@ -101,6 +112,45 @@ export class HomeroselfPage {
   mode(){
     let modal = this.mdl.create(HomeoeditPage)
     modal.present()
+  }
+
+
+
+
+  load(em)
+  {
+
+
+
+    if(this.data) {
+
+      return new Promise(resolve => {
+
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/homeo/'+em).map(res => res.json()).subscribe(data => {
+          this.data = data
+          resolve(this.data);
+          // this.chemist=data
+          console.log(this.data)
+        });
+
+      });
+    }
+
+    return new Promise(resolve => {
+
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/homeo/'+em).map(res => res.json()).subscribe(data => {
+
+        this.data = data
+        resolve(this.data);
+        // this.chemist=data;
+        console.log(this.data)
+
+      });
+
+    });
+
+
+
   }
 
 

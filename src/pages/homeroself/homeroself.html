@@ -1,7 +1,7 @@
 <ion-header  [hidden]="showheader">
   <ion-navbar>
     <ion-title>
-      Stish Medical store
+      {{data?.name}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -53,8 +53,8 @@
 
         <ion-row>
           <ion-col>
-            <p style="margin-top: 0.1%;color: #fff;font-size:large; text-align: left;"> Satish  Medical store</p>
-            <p style="color: #ffffff; text-align: left;"> all type of medicine</p>
+            <p style="margin-top: 0.1%;color: #fff;font-size:large; text-align: left;"> {{data?.name}}</p>
+            <p style="color: #ffffff; text-align: left;"> {{data?.address}}</p>
           </ion-col>
         </ion-row>
 
