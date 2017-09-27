@@ -1,7 +1,7 @@
 <ion-header  [hidden]="showheader">
   <ion-navbar>
     <ion-title>
-      Chandra Hospital
+      {{data?.name}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -52,8 +52,8 @@
 
         <ion-row>
           <ion-col>
-            <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> Chandra Hospital</p>
-            <p style="color: #ffffff; text-align: left;"> RTo </p>
+            <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> {{data?.name}}</p>
+            <p style="color: #ffffff; text-align: left;"> {{data?.address}}</p>
           </ion-col>
 
         </ion-row>
@@ -74,7 +74,7 @@
       </ion-list-header>
 
       <ion-item>
-        <h2  [innerHTML]=""> ICU, ICE </h2>
+        <h2  [innerHTML]=""> {{data?.services}} </h2>
       </ion-item>
 
       <ion-list-header style="color: #00baba">
@@ -82,7 +82,7 @@
       </ion-list-header>
 
       <ion-item>
-        <h2  [innerHTML]=""> ICU, ICE </h2>
+        <h2  [innerHTML]=""> {{data?.doctors}}</h2>
       </ion-item>
 
       <ion-item>
@@ -96,6 +96,7 @@
 
     </ion-list>
 
+    <!--
     <ion-list-header style="color: #00baba">
       Reviews
     </ion-list-header>
@@ -105,13 +106,13 @@
 
 
     </ion-item>
-
+  -->
 
   </div>
 
 </ion-content>
 <ion-footer  no-border no-lines no-padding transparent>
-  <button ion-button full color="danger"> Call</button>
+  <button ion-button full color="danger"> {{data?.phone}}</button>
 
 
 </ion-footer>
