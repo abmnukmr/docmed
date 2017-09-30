@@ -46,13 +46,74 @@ export class AdddoctorPage {
 
 
     this.items = [
-      'General Physician', 'Ent(Ear-Nose-Throat)', 'Dermatologist', 'Opthalmology','Paediatrics',
-      'Diabetology',
-      'Nutritionist' , 'Gastroentrology',  'Gyanaecology $ Obsterics', 'Cardiologist',
-      'Neurology', 'Nephorologist', 'Orthopaedics' ,'Urologist',
-      'Hair Fall', 'Dentist', 'Phychologist', 'Psychiatrist', 'Hair Transplant',
-      'Radiologist' ,'Allergist', 'Geriatrician' ,'Hematologist', 'Hepatologist Infertility'
+      "General physician",
 
+      "ENT(Eye, nose ,throat)",
+
+      "Dermatologist",
+
+      "Dentist",
+
+      "Diabetes",
+
+      "Ophthalmology",
+
+      "Hair fall",
+
+      "Pediatrics",
+
+      "Sexologist",
+
+      "Depression",
+
+      "Pregnancy",
+
+      "Gynaecology & obstetrics",
+
+      "Infertility",
+
+      "Nutritionist /Dietitian",
+
+      "Gastroenterology",
+
+      "Cardiologist",
+
+      "Nephrology",
+
+      "Neurologist",
+
+      "allergist",
+
+      "Geriatrics",
+
+      "Podiatry",
+
+      "Herpetologist",
+
+      "Haematologist",
+
+      "Immunologist",
+
+      "Oncologist",
+
+      "Orthologist",
+
+      "psychologist",
+
+      "Psychiatrist",
+
+      "Anaesthesiologists",
+
+      "Urologist",
+
+      "Radiologist",
+
+      "Surgeon",
+
+      "Plastic surgeon",
+
+      "Radiologist",
+      "Pet vetnary"
     ];
   }
 

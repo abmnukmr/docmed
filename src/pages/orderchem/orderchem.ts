@@ -36,6 +36,10 @@ export class OrderchemPage {
   images = [];
   imgin;
   targetimages=[];
+
+  address:any;
+  phone:any;
+  description:any;
 //  private cropper:cropperjs.Cropper;
 
   @ViewChild('imageSrc') input: ElementRef;
@@ -214,7 +218,7 @@ export class OrderchemPage {
       },
       chunkedMode:true,
       mimeType: "image/png",
-      params : {itemname:this.itemname,itemno: this.itemnumber,discription:this.discription,itemprice:this.itemprice}
+      params : {address:this.address,description: this.description,phone:this.phone}
     };
 
     const fileTransfer: FileTransferObject = this.transfer.create();

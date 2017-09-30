@@ -13,12 +13,86 @@ import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular
   templateUrl: 'docedit.html',
 })
 export class DoceditPage {
-
+ items:any;
   constructor(public vctrl:ViewController,public navCtrl: NavController, public navParams: NavParams) {
+    this.initializeItems();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DoceditPage');
+    console.log('ionViewDidLoad DocterPage');
+  }
+
+  initializeItems() {
+    this.items = [
+      "General physician",
+
+      "ENT(Eye, nose ,throat)",
+
+      "Dermatologist",
+
+      "Dentist",
+
+      "Diabetes",
+
+      "Ophthalmology",
+
+      "Hair fall",
+
+      "Pediatrics",
+
+      "Sexologist",
+
+      "Depression",
+
+      "Pregnancy",
+
+      "Gynaecology & obstetrics",
+
+      "Infertility",
+
+      "Nutritionist /Dietitian",
+
+      "Gastroenterology",
+
+      "Cardiologist",
+
+      "Nephrology",
+
+      "Neurologist",
+
+      "allergist",
+
+      "Geriatrics",
+
+      "Podiatry",
+
+      "Herpetologist",
+
+      "Haematologist",
+
+      "Immunologist",
+
+      "Oncologist",
+
+      "Orthologist",
+
+      "psychologist",
+
+      "Psychiatrist",
+
+      "Anaesthesiologists",
+
+      "Urologist",
+
+      "Radiologist",
+
+      "Surgeon",
+
+      "Plastic surgeon",
+
+      "Radiologist",
+      "Prt vetnary"
+    ];
   }
   cnal(){
     this.vctrl.dismiss();
