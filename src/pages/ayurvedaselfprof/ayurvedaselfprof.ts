@@ -3,6 +3,7 @@ import {AlertController, Content, IonicPage, ModalController, NavController, Nav
 import {AurvededitPage} from "../aurvededit/aurvededit";
 import {Http} from "@angular/http";
 import *as firebase from 'firebase'
+import {MorePage} from "../more/more";
 /**
  * Generated class for the AyurvedaselfprofPage page.
  *
@@ -15,40 +16,28 @@ import *as firebase from 'firebase'
   templateUrl: 'ayurvedaselfprof.html',
 })
 export class AyurvedaselfprofPage {
-  get content(): Content {
-    return this._content;
-  }
-
-  set content(value: Content) {
-    this._content = value;
-  }
-    data:any;
-  emailsearch:any;
-
-  @ViewChild(Content) private _content: Content;
   showheader: boolean = true;
+  data:any;
+  emailsearch:any;
+  @ViewChild(Content) content: Content;
 
-  constructor(public http:Http,public mdl:ModalController,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
-
-    var user = firebase.auth().currentUser;
-    if (user != null) {
-      var  name = user.displayName;
-      this.emailsearch = user.email;
-      var  photoUrl = user.photoURL;
-    }
-    this.load(this.emailsearch);
-
+  constructor(public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public alertCtrl: AlertController) {
+    //this.detescroll();
+    this.load();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ChemistprofPage');
+    console.log('ionViewDidLoad DoctrrPage');
   }
 
+  gob() {
+    this.navCtrl.pop();
+  }
 
   ngAfterViewInit() {
     this.zone.run(() => {
 
-      this._content.ionScroll.subscribe(($event: any) => {
+      this.content.ionScroll.subscribe(($event: any) => {
         let scrollTop: number = $event.scrollTop;
         console.log(scrollTop);
 
@@ -69,66 +58,43 @@ export class AyurvedaselfprofPage {
       });
     });
   }
-
-  showCheckbox() {
-    let prompt = this.alertCtrl.create({
-      title: 'Delivery Confirmation',
-      message: "",
-      inputs: [
-        {
-          name: 'Email',
-          placeholder: 'Email',
-        },
-        {
-          name: 'orderId',
-          placeholder: 'orderId',
-        },
-
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Delivered',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
-    });
-    prompt.present();
+  gotoedit(nm,ex,fee,lic,spl,add,phn,sunt,mont,tut,wedt,thut,frdt,satt,ser ){
+    let er=this.Mdl.create(AurvededitPage,{ "name":nm,
+    "experience":ex,
+    "fee":fee,
+    "lic":lic,
+    "Specialize":spl,
+    "address":add,
+    "phoneNo":phn,
+    "sundaytime":sunt,
+    "Mondaytime":mont,
+    "Tuesdaytime":tut,
+    "Wednesdaytime":wedt,
+    "Thrusdaytime":thut,
+    "Fridaytime":frdt,
+    "Saturdaytime":satt,
+    "services":ser
+  })
+    er.present()
   }
 
 
-
-
-
-  mode(){
-    let modal = this.mdl.create(AurvededitPage)
-    modal.present()
-  }
-
-
-  popchem(){
-    this.navCtrl.pop();
-  }
-
-
-
-  load(em)
+  load()
   {
 
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      var  name = user.displayName;
+      this.emailsearch = user.email;
+      var  photoUrl = user.photoURL;
+    }
 
 
     if(this.data) {
 
       return new Promise(resolve => {
 
-        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/ayurveda/'+em).map(res => res.json()).subscribe(data => {
+        this.http.get('https://quiet-ridge-46090.herokuapp.com/be/ayurveda/'+this.emailsearch).map(res => res.json()).subscribe(data => {
           this.data = data
           resolve(this.data);
           // this.chemist=data
@@ -140,7 +106,7 @@ export class AyurvedaselfprofPage {
 
     return new Promise(resolve => {
 
-      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/ayurveda/'+em).map(res => res.json()).subscribe(data => {
+      this.http.get('https://quiet-ridge-46090.herokuapp.com/be/ayurveda/'+this.emailsearch).map(res => res.json()).subscribe(data => {
 
         this.data = data
         resolve(this.data);

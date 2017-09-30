@@ -53,23 +53,40 @@
 
         <ion-row>
           <ion-col  style="left: 0">
+            <a href="geo:{{data?.lat}},{{data?.lng}}"  style="margin-left: 4px; color: #8bcbff ">
+
             <button ion-button icon-only clear>
             <ion-icon name="pin" color="light"  item-start ></ion-icon>
+
+
             </button>
+            </a>
           </ion-col>
 
           <ion-col >
+
+            <a href="tel:{{data?.phone}}"  style="margin-left: 4px; color: #8bcbff ">
+
             <button ion-button icon-only clear>
 
             <ion-icon name="call" color="light" item-start></ion-icon>
+
+
             </button>
+
+            </a>
           </ion-col>
 
           <ion-col>
+            <a href="mailto:{{data?.email}}"  style="margin-left: 4px; color: #8bcbff ">
+
             <button ion-button icon-only clear>
 
             <ion-icon name="mail" color="light" item-start></ion-icon>
+
+
             </button>
+            </a>
           </ion-col>
           <ion-col>
 

@@ -9,30 +9,72 @@
 
 <ion-content no-padding>
 
-
   <ion-list>
+
     <ion-item>
-      <ion-input  [(ngModel)]="name" placeholder=" Store Name" ></ion-input>
+      <ion-input  [(ngModel)]="name" placeholder="Doctor Name" ></ion-input>
     </ion-item>
+
+
+    <ion-item>
+      <ion-input  [(ngModel)]="experience" placeholder="Experience" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="fee" placeholder="Fee" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="lic" placeholder="License No." ></ion-input>
+    </ion-item>
+
 
     <ion-item>
       <ion-textarea   placeholder="Address" rows="3" #textarea  cols="20" fz-elastic   style="font-size:17px; overflow: scroll; word-break: break-all; margin-bottom:4%; margin-top:4%; white-space:pre-wrap; bottom:0%; height:100%; width:93%;"   type="text"  [(ngModel)]="address"   >
 
       </ion-textarea>
     </ion-item>
-    <ion-item>
-      <ion-input  [(ngModel)]="location" placeholder=" Geographic location"  readonly ></ion-input>
-    </ion-item>
 
 
     <ion-item>
-      <ion-input  [(ngModel)]="phone" placeholder="Phone No." type="number"> </ion-input>
+      <ion-input  [(ngModel)]="location" placeholder=" Geographic location"   readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="phoneNo" placeholder="Phone No" ></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input  [(ngModel)]="DlNo" placeholder="Dl No." ></ion-input>
+      <ion-input  [(ngModel)]="sundaytime" placeholder="Sunday-time" ></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Mondaytime" placeholder="Monday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Tuesdaytime" placeholder="Tuesday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Wednesdaytime" placeholder="Wednesday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Thrusdaytime" placeholder="Thrusday-time" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input  [(ngModel)]="Fridaytime" placeholder="Friday-time" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  [(ngModel)]="Saturdaytime" placeholder="Saturday-time" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea   placeholder="Services" rows="3" #textarea  cols="20" fz-elastic   style="font-size:17px; overflow: scroll; word-break: break-all; margin-bottom:4%; margin-top:4%; white-space:pre-wrap; bottom:0%; height:100%; width:93%;"   type="text"  [(ngModel)]="services"   >
+
+      </ion-textarea>
+    </ion-item>
+
   </ion-list>
+
+
 
 
 

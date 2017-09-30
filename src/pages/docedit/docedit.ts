@@ -91,7 +91,7 @@ export class DoceditPage {
       "Plastic surgeon",
 
       "Radiologist",
-      "Prt vetnary"
+      "Pet vetnary"
     ];
   }
   cnal(){

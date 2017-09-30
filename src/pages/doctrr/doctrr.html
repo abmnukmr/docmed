@@ -85,8 +85,8 @@
       <ion-item>
         <ion-icon name="pin" color="secondary"  item-left ></ion-icon>
         <ion-label item-start>Location</ion-label>
-        <p>{{data?.lat}},{{data?.lng}}</p>
-        <ion-label item-end> get Direction  </ion-label>
+        <ion-label item-end>   <a href="geo:{{data?.lat}},{{data?.lng}}"  style="margin-left: 4px; color: #8bcbff ">
+          get Location</a>  </ion-label>
 
       </ion-item>
 
@@ -134,7 +134,11 @@
       </p>
 
     </ion-list>
+
   </div>
-  <p>{{data?.phone}}</p>
 
 </ion-content>
+<ion-footer >
+  <button ion-button full color="danger"> <a href="tel:{{data?.phone}}" style="margin-left: 4px; color: #ffffff" >Call:-{{data?.phone}}</a>
+  </button>
+</ion-footer>

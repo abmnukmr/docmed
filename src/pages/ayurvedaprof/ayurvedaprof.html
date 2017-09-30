@@ -7,12 +7,12 @@
 </ion-header>
 
 
-<ion-content elastic-header no-padding>
+<ion-content elastic-header  >
 
   <div class="paralaxed">
 
 
-    <ion-card style="margin-left: 0;margin-right: 0; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://placehold.it/350x150');
+    <ion-card style="margin-left: 0;margin-right: 0;margin-top: 0; margin-bottom: 0; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://placehold.it/350x150');
   background-position: center top;" >
 
       <div  style="background-color: rgba(1,1,1,0.65);height: 100%; position: absolute; width: 100%" >
@@ -20,11 +20,12 @@
         <ion-row style="margin-top:3%;">
 
 
-          <button left ion-button clear icon-only (click)="popchem()"  *ngIf="showheader">
+          <button left ion-button clear icon-only (click)="gob()"  *ngIf="showheader">
             <ion-icon name="arrow-back" color="light"> </ion-icon>
 
 
           </button>
+
           <!--
 
           <ion-navbar transparent>
@@ -35,7 +36,7 @@
 
       </div>
 
-      <img src="assets/image/Chemist.jpg" height="170" width="100%" />
+      <img src="assets/image/docter.jpg" height="170" width="100%" />
 
 
 
@@ -44,111 +45,94 @@
 
       <div class="card-title">
 
-
         <ion-row>
           <ion-col>
-            <p style="margin-top: 0.1%;color: #fff;font-size:large; text-align: left;"> {{data?.name}}</p>
-            <p style="color: #ffffff; text-align: left;"> {{data?.address}}</p>
+            <p style="margin-top: 2%;color: #fff;font-size:large; text-align: left;"> {{data?.name}}</p>
+            <p style="color: #ffffff; text-align: left;">{{data?.address}} </p>
           </ion-col>
+
         </ion-row>
 
-        <ion-row>
-          <ion-col  style="left: 0">
-            <button ion-button icon-only clear>
-              <ion-icon name="pin" color="light"  item-start ></ion-icon>
-            </button>
-          </ion-col>
-
-          <ion-col >
-            <button ion-button icon-only clear>
-
-              <ion-icon name="call" color="light" item-start></ion-icon>
-            </button>
-
-          </ion-col>
-
-          <ion-col>
-            <button ion-button icon-only clear>
-
-              <ion-icon name="mail" color="light" item-start></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col>
-
-          </ion-col>
-
-
-        </ion-row>
       </div>
     </ion-card>
 
   </div>
 
-
-  <ion-fab right style="margin-top: 37vw;">
-
-    <button ion-fab (click)="order()">  <ion-icon name="cart"></ion-icon>
-    </button>
-
-  </ion-fab>
   <div class="main_content">
 
 
 
-      <ion-list>
 
-        <ion-list-header> Your order</ion-list-header>
-
-
-        <ion-card style="background-color: rgba(253,253,253,0.68)">
-
-          <ion-item>
-            <button ion-button icon-left clear small item-end (click)="showCheckbox()">
-              <ion-icon name="more"></ion-icon>
-            </button>
-              <h2>Marty McFly</h2>
-            <p>November 5, 1955</p>
-          </ion-item>
-          <img src="https://career.webindia123.com/career/options/images/ayurveda.jpg">
+    <ion-list no-border>
+      <ion-item>
+        <ion-icon name="analytics" color="danger" item-left></ion-icon>
 
 
-             <ion-card-content>
-               <p>
-                 The most popular industrial group ever, and largely
-                 responsible for bringing the music to a mass audience.
-               </p>
-             </ion-card-content>
+        <ion-label item-start> Experience </ion-label>
+        <ion-label item-end> {{data?.exper}} </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="pricetag" color="primary" item-left></ion-icon>
 
-             <ion-row>
-             <ion-col>
-              <button ion-button icon-left clear small>
-                <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
-                <div>deleverd</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button icon-left clear small>
-                <ion-icon name="clock"></ion-icon>
-                <div>4 Comments</div>
-              </button>
-            </ion-col>
-          </ion-row>
+        <ion-label item-start> Fee </ion-label>
+        <ion-label item-end> {{data?.fee}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="pin" color="secondary"  item-left ></ion-icon>
+        <ion-label item-start>Location</ion-label>
+        <ion-label item-end>  <a href="geo:{{data?.lat}},{{data?.lng}}"  style="margin-left: 4px; color: #8bcbff "> get Location </a> </ion-label>
 
-        </ion-card>
+      </ion-item>
 
 
+      <ion-list-header>
+        <p style="color: #ff4099"> Timings</p>
+      </ion-list-header>
+      <div>
+        <ion-item>
+          <ion-icon name="ios-clock-outline" item-start></ion-icon>
+          <p style="color: #007aff">  Sunday </p> {{data?.sun_time}}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-clock-outline" item-start></ion-icon>
+          <p style="color: #007aff"> Monday</p> {{data?.mon_time}}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-clock-outline" item-start></ion-icon>
+          <p style="color: #007aff"> Tuesday</p> {{data?.tue_time}}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-clock-outline" item-start></ion-icon>
+          <p style="color: #007aff"> Wednesday </p>{{data?.wed_time}}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-clock-outline" item-start></ion-icon>
+          <p style="color: #007aff"> Thrusday</p> {{data?.thu_time}}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="ios-clock-outline" item-start></ion-icon>
+          <p style="color: #007aff">Friday</p> {{data?.fri_time}}
+        </ion-item>
 
+        <ion-item>
+          <ion-icon name="ios-clock-outline" item-start></ion-icon>
+          <p style="color: #007aff"> Saturday </p> {{data?.sat_time}}
+        </ion-item>
+      </div>
 
-      </ion-list>
-
-
-
-
+      <ion-list-header>
+        <p style="color: #ff4099">  Services</p>
+      </ion-list-header>
+      <p style="white-space: pre; display: list-item; padding-left:2%; ">
+        {{data?.services}}
+      </p>
+    </ion-list>
 
 
 
   </div>
-
-
-
 </ion-content>
+<ion-footer >
+  <button ion-button full color="danger"> <a href="tel:{{data?.phone}}" style="margin-left: 4px; color: #ffffff" >Call:-{{data?.phone}}</a>
+  </button>
+</ion-footer>

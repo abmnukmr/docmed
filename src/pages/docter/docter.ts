@@ -95,7 +95,7 @@ export class DocterPage {
   "Plastic surgeon",
 
   "Radiologist",
-      "Prt vetnary"
+      "Pet vetnary"
   ];
   }
 
