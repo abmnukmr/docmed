@@ -103,7 +103,7 @@ export class HomeoeditPage {
     headers.append('Access-Control-Allow-Origin', '*');
     let options = new RequestOptions({headers:headers});
 
-    this.http.post(this.url+"/update/homeo/" + this.email1, JSON.stringify(this.update), options)
+    this.http.post(this.url+"update/homeo/" + this.email1, JSON.stringify(this.update), options)
       .map(res => res.json()).subscribe(data => {
       console.log(data)
       this.loading.dismiss();
