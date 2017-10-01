@@ -97,7 +97,7 @@ export class PatheditPage {
     headers.append('Access-Control-Allow-Origin', '*');
     let options = new RequestOptions({headers:headers});
 
-    this.http.post(this.url+"/update/pathalogy/" + this.email1, JSON.stringify(this.update), options)
+    this.http.post(this.url+"update/pathalogy/" + this.email1, JSON.stringify(this.update), options)
       .map(res => res.json()).subscribe(data => {
       console.log(data)
       this.loading.dismiss();
