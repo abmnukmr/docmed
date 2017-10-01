@@ -29,7 +29,7 @@ export class HomeroselfPage {
   @ViewChild(Content) private _content: Content;
   showheader: boolean = true;
    emailsearch:any;
-  constructor(public http:Http,public mdl:ModalController,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
+  constructor(public Mdl:ModalController,public http:Http,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
 
 
     var user = firebase.auth().currentUser;
@@ -41,6 +41,29 @@ export class HomeroselfPage {
     this.load(this.emailsearch);
 
   }
+
+
+
+  gotoedit(nm,ex,fee,lic,spl,add,phn,sunt,mont,tut,wedt,thut,frdt,satt,ser ){
+    let er=this.Mdl.create(HomeoeditPage,{ "name":nm,
+      "experience":ex,
+      "fee":fee,
+      "lic":lic,
+      "Specialize":spl,
+      "address":add,
+      "phoneNo":phn,
+      "sundaytime":sunt,
+      "Mondaytime":mont,
+      "Tuesdaytime":tut,
+      "Wednesdaytime":wedt,
+      "Thrusdaytime":thut,
+      "Fridaytime":frdt,
+      "Saturdaytime":satt,
+      "services":ser
+    })
+    er.present()
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChemistprofPage');
@@ -109,10 +132,6 @@ export class HomeroselfPage {
 
 
 
-  mode(){
-    let modal = this.mdl.create(HomeoeditPage)
-    modal.present()
-  }
 
 
 
