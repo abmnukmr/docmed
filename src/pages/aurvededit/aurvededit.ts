@@ -115,7 +115,7 @@ export class AurvededitPage {
     headers.append('Access-Control-Allow-Origin', '*');
     let options = new RequestOptions({headers:headers});
 
-    this.http.post("https://quiet-ridge-46090.herokuapp.com/add/ayurveda/" + this.email1, JSON.stringify(this.update), options)
+    this.http.post("https://quiet-ridge-46090.herokuapp.com/update/ayurveda/" + this.email1, JSON.stringify(this.update), options)
       .map(res => res.json()).subscribe(data => {
       console.log(data)
       this.loading.dismiss();

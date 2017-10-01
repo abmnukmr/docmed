@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ViewController} from 'ionic-angular';
-import {Http} from "@angular/http";
+import {Http, RequestOptions,Headers} from "@angular/http";
 import {LocationProvider} from "../../providers/location/location";
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the PatheditPage page.
@@ -68,5 +69,50 @@ export class PatheditPage {
   cnal(){
     this.navCtrl.pop();
   }
+
+  updatedata() {
+    this.loading.present();
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      var name = user.displayName;
+      this.email1 = user.email;
+      var photoUrl = user.photoURL;
+    }
+
+    this.update = {
+
+
+
+      "name":this.name,
+      "email":this.email1,
+      "address":this.address,
+      "lat":this.Loc.lat,
+      "lng":this.Loc.lat,
+      "phone":this.phone,
+      "dl_no":this.DlNo
+    }
+    console.log("updated start");
+    var headers = new Headers();
+    headers.append('content-type', 'application/json;charset=UTF-8');
+    headers.append('Access-Control-Allow-Origin', '*');
+    let options = new RequestOptions({headers:headers});
+
+    this.http.post(this.url+"/update/pathalogy/" + this.email1, JSON.stringify(this.update), options)
+      .map(res => res.json()).subscribe(data => {
+      console.log(data)
+      this.loading.dismiss();
+      this.cnal();
+      //this.navCtrl.push(WalletPage);
+    }, err => {
+      console.log("Error!:");
+      this.loading.dismiss();
+    });
+
+    this.loading.dismiss();
+    this.cnal();
+
+
+  }
+
 
 }

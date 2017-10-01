@@ -28,7 +28,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-input  [(ngModel)]="phone" placeholder="Phone No" ></ion-input>
+    <ion-input  [(ngModel)]="phone" placeholder="Phone No"  type="number"></ion-input>
   </ion-item>
   <ion-item>
   <ion-textarea   placeholder="Doctors" rows="3" #textarea  cols="20" fz-elastic   style="font-size:17px; overflow: scroll; word-break: break-all; margin-bottom:4%; margin-top:4%; white-space:pre-wrap; bottom:0%; height:100%; width:93%;"   type="text"  [(ngModel)]="doctors"   >
@@ -50,7 +50,7 @@
   <ion-row>
     <ion-col no-padding>
 
-      <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin> save</button>
+      <button ion-button color="primary" style="width:100%;border-radius: 0%" no-margin (click)="updatedata()"> save</button>
 
     </ion-col>
 
