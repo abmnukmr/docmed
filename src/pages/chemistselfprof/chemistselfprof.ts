@@ -44,6 +44,12 @@ export class ChemistselfprofPage {
       "Saturdaytime":satt,
       "services":ser
     })
+
+    er.onDidDismiss(data => {
+      this.load();
+
+    });
+
     er.present()
   }
 

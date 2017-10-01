@@ -76,6 +76,11 @@ export class AyurvedaselfprofPage {
     "services":ser
   })
     er.present()
+
+   er.onDidDismiss(data => {
+     this.load();
+
+   });
   }
 
 

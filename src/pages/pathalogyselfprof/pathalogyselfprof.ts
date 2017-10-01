@@ -51,7 +51,13 @@ export class PathalogyselfprofPage {
       "Saturdaytime":satt,
       "services":ser
     })
+    er.onDidDismiss(data => {
+      this.load(this.emailsearch);
+
+    });
+
     er.present()
+
   }
 
 

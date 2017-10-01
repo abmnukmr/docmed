@@ -44,6 +44,11 @@ export class DocterselfprofPage {
       "Saturdaytime":satt,
       "services":ser
     })
+    er.onDidDismiss(data => {
+      this.load();
+
+    });
+
     er.present()
   }
 
