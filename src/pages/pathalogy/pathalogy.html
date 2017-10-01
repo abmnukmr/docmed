@@ -16,7 +16,7 @@
 
 <ion-content no-padding>
 <ion-list>
-  <ion-item (click)="goto(item.email)" *ngFor="let item of data">
+  <ion-item (click)="goto(item.email)" *ngFor="let item of data" [hidden]="item.show=='true'?false:true">
     <h3 style="color: #00baba"><b>{{item.name}}</b></h3>
 
     <ion-row>
