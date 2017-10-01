@@ -33,6 +33,28 @@ export class PathalogyselfprofPage {
 
   }
 
+
+  gotoedit(nm,ex,fee,lic,spl,add,phn,sunt,mont,tut,wedt,thut,frdt,satt,ser ){
+    let er=this.Mdl.create(PatheditPage,{ "name":nm,
+      "experience":ex,
+      "fee":fee,
+      "lic":lic,
+      "Specialize":spl,
+      "address":add,
+      "phoneNo":phn,
+      "sundaytime":sunt,
+      "Mondaytime":mont,
+      "Tuesdaytime":tut,
+      "Wednesdaytime":wedt,
+      "Thrusdaytime":thut,
+      "Fridaytime":frdt,
+      "Saturdaytime":satt,
+      "services":ser
+    })
+    er.present()
+  }
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DoctrrPage');
   }
@@ -69,10 +91,6 @@ export class PathalogyselfprofPage {
 
 
 
-  gotoedit(){
-    let er=this.Mdl.create(PatheditPage)
-    er.present()
-  }
 
 
 
