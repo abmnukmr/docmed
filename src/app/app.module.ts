@@ -138,8 +138,6 @@ firebase.initializeApp(firebaseConfig);
     HomeoeditPage,
     HomeroselfPage
 
-
-
   ],
   imports: [
     BrowserModule,
@@ -201,12 +199,6 @@ firebase.initializeApp(firebaseConfig);
     HomeoPage,
     HomeoeditPage,
     HomeroselfPage
-
-
-
-
-
-
   ],
   providers: [ Camera,FilePath,File,FileTransfer,FileTransferObject,
     StatusBar,Geolocation,LocationProvider,Diagnostic,OpenNativeSettings,LocationAccuracy,

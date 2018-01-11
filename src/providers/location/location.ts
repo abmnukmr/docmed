@@ -31,6 +31,7 @@ export class LocationProvider {
 
     // Background Tracking
 
+    /*
     let config = {
       desiredAccuracy: 0,
       stationaryRadius: 20,
@@ -62,6 +63,7 @@ export class LocationProvider {
 
     // Foreground Tracking
 
+*/
     let options = {
       frequency: 3000,
       enableHighAccuracy: true
