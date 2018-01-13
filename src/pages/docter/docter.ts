@@ -28,74 +28,64 @@ export class DocterPage {
 
   initializeItems() {
     this.items = [
-"General physician",
+      "General physician",
 
-  "ENT(Eye, nose ,throat)",
+      "ENT(Eye, nose ,throat)",
 
-  "Dermatologist",
+      "Dermatologist",
 
-  "Dentist",
+      "Dentist",
 
-  "Diabetes",
+      "Diabetologist",
 
-  "Ophthalmology",
+      "Ophthalmology",
 
-  "Hair fall",
+      "Hair fall",
 
-  "Pediatrics",
+      "Pediatrics",
 
-  "Sexologist",
+      "Sexologist",
 
-  "Depression",
+      "Depression",
 
-  "Pregnancy",
+      "Pregnancy",
 
-  "Gynaecology & obstetrics",
+      "Gynaecology & obstetrics",
 
-  "Infertility",
+      "Infertility",
 
-  "Nutritionist /Dietitian",
+      "Nutritionist /Dietitian",
 
-  "Gastroenterology",
+      "Gastroenterology",
 
-  "Cardiologist",
+      "Cardiologist",
 
-  "Nephrology",
+      "Nephrology",
 
-  "Neurologist",
+      "Neurologist",
 
-  "allergist",
+      "allergist",
 
-  "Geriatrics",
+      "Geriatrics",
 
-  "Podiatry",
+      "Podiatry",
 
-  "Herpetologist",
+      "Herpetologist",
 
-  "Haematologist",
+      "Haematologist",
 
-  "Immunologist",
+      "Immunologist",
 
-  "Oncologist",
+      "Oncologist",
 
-  "Orthologist",
-
-  "psychologist",
-
-  "Psychiatrist",
-
-  "Anaesthesiologists",
-
-  "Urologist",
-
-  "Radiologist",
-
-  "Surgeon",
-
-  "Plastic surgeon",
-
-  "Radiologist",
-      "Pet vetnary"
+      "Orthologist",
+      "Psychiatrist",
+      "Anaesthesiologists",
+      "Urologist",
+      "Surgeon",
+      "Radiologist",
+      "Pet vetnary",
+      "Dai"
   ];
   }
 

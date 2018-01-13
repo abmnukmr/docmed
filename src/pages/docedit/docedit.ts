@@ -78,8 +78,7 @@ export class DoceditPage {
       "Dermatologist",
 
       "Dentist",
-
-      "Diabetes",
+      "Diabetologist",
 
       "Ophthalmology",
 
@@ -123,22 +122,18 @@ export class DoceditPage {
 
       "Orthologist",
 
-      "psychologist",
 
-      "Psychiatrist",
-
+       "Psychiatrist",
       "Anaesthesiologists",
 
       "Urologist",
 
-      "Radiologist",
 
       "Surgeon",
 
-      "Plastic surgeon",
-
       "Radiologist",
-      "Pet vetnary"
+      "Pet vetnary",
+      "Dai"
     ];
   }
 

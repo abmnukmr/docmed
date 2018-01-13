@@ -98,7 +98,7 @@ export class AdddoctorPage {
 
       "Orthologist",
 
-      "psychologist",
+      "Psychologist",
 
       "Psychiatrist",
 
@@ -113,7 +113,8 @@ export class AdddoctorPage {
       "Plastic surgeon",
 
       "Radiologist",
-      "Pet vetnary"
+      "Pet vetnary",
+      "Dai"
     ];
   }
 
