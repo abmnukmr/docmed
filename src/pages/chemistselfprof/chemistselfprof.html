@@ -59,7 +59,7 @@
 
         <ion-row>
           <ion-col  style="left: 0">
-            <button ion-button icon-only clear>
+            <button ion-button icon-only clear (click)="nevigate(data?.lat,data?.lng,data?.name)">
               <ion-icon name="pin" color="light"  item-start ></ion-icon>
             </button>
           </ion-col>
@@ -97,42 +97,39 @@
 
 
 
-
     <ion-list>
 
       <ion-list-header> Your order</ion-list-header>
 
 
-      <ion-card style="background-color: rgba(253,253,253,0.68)">
+      <ion-card style="background-color: rgba(253,253,253,0.68)" [hidden]="iy.chem_id==email1||iy?.sender_id==email1 ||iy?.admin_id==email1?false:true"   *ngFor="let iy of data?.orders"  >
 
         <ion-item>
           <button ion-button icon-left clear small item-end (click)="showCheckbox()">
-            <ion-icon name="more"></ion-icon>
+            <ion-icon name="more" [hidden]="iy?.chem_id==email1||iy?.sender_id==email1 ||iy?.admin_id==email1?false:true" ></ion-icon>
           </button>
-          <h2>Marty McFly</h2>
-          <p>November 5, 1955</p>
+
         </ion-item>
-        <img src="https://career.webindia123.com/career/options/images/ayurveda.jpg">
+        <img [src]="iy.image">
 
 
         <ion-card-content>
-          <p>
-            The most popular industrial group ever, and largely
-            responsible for bringing the music to a mass audience.
-          </p>
+          <p>{{iy.description}}</p>
+          <h2>{{iy.address}}</h2>
+          <h3 style="color: crimson">{{iy.phone}}</h3>
         </ion-card-content>
 
         <ion-row>
           <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
-              <div>deleverd</div>
+            <button ion-button icon-left clear small [hidden]="iy.delever=='false'?true:false">
+              <ion-icon name="ios-checkmark-circle-outline" color="primay"></ion-icon>
+              <div style="color: #00baba;">deleverd</div>
             </button>
           </ion-col>
           <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="clock"></ion-icon>
-              <div>4 Comments</div>
+            <button ion-button icon-left clear small [hidden]="iy.delever=='false'?true:false">
+              <ion-icon name="clock" color="danger"></ion-icon>
+              <div style="color: crimson;">{{iy.delevery_date}}</div>
             </button>
           </ion-col>
         </ion-row>

@@ -1,8 +1,9 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {ChemisteditPage} from "../chemistedit/chemistedit";
-import {Http} from "@angular/http";
+import {Http, RequestOptions} from "@angular/http";
 import * as firebase from 'firebase';
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the ChemistselfprofPage page.
@@ -20,10 +21,17 @@ export class ChemistselfprofPage {
   @ViewChild(Content) content: Content;
   showheader:boolean=true;
   data:any;
+  email1:any;
   emailsearch:any;
-  constructor(public  http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
+  constructor(public loading:Lo,public nevigator:LaunchNavigator,public  http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
 
     this.load();
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      var name = user.displayName;
+      this.email1 = user.email;
+      var photoUrl = user.photoURL;
+    }
   }
 
 
@@ -53,6 +61,17 @@ export class ChemistselfprofPage {
     er.present()
   }
 
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChemistprofPage');
@@ -168,6 +187,63 @@ export class ChemistselfprofPage {
 
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  cnf(id,em) {
+    this.loading.present();
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      var name = user.displayName;
+      this.email1 = user.email;
+      var photoUrl = user.photoURL;
+    }
+
+    this.update = {
+
+    }
+    console.log("updated start");
+    var headers = new Headers();
+    headers.append('content-type', 'application/json;charset=UTF-8');
+    headers.append('Access-Control-Allow-Origin', '*');
+    let options = new RequestOptions({headers:headers});
+
+    this.http.post("https://quiet-ridge-46090.herokuapp.com/add/ayurveda/" + this.email1, JSON.stringify(this.update), options)
+      .map(res => res.json()).subscribe(data => {
+      console.log(data)
+      this.loading.dismiss();
+      this.cnal();
+      //this.navCtrl.push(WalletPage);
+    }, err => {
+      console.log("Error!:", err);
+      this.loading.dismiss();
+    });
+
+    this.loading.dismiss();
+    this.cnal();
+
+
+  }
+
+
+
+
+
+
+
+
+
 
 
 }

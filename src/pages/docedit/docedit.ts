@@ -72,24 +72,15 @@ export class DoceditPage {
   initializeItems() {
     this.items = [
       "General physician",
-
       "ENT(Eye, nose ,throat)",
-
       "Dermatologist",
-
       "Dentist",
       "Diabetologist",
-
       "Ophthalmology",
-
       "Hair fall",
-
       "Pediatrics",
-
       "Sexologist",
-
       "Depression",
-
       "Pregnancy",
 
       "Gynaecology & obstetrics",

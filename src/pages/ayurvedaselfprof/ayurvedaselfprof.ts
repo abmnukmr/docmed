@@ -4,6 +4,8 @@ import {AurvededitPage} from "../aurvededit/aurvededit";
 import {Http} from "@angular/http";
 import *as firebase from 'firebase'
 import {MorePage} from "../more/more";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
+
 /**
  * Generated class for the AyurvedaselfprofPage page.
  *
@@ -21,7 +23,7 @@ export class AyurvedaselfprofPage {
   emailsearch:any;
   @ViewChild(Content) content: Content;
 
-  constructor(public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public alertCtrl: AlertController) {
+  constructor(public nevigator:LaunchNavigator,public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public alertCtrl: AlertController) {
     //this.detescroll();
     this.load();
   }
@@ -33,6 +35,18 @@ export class AyurvedaselfprofPage {
   gob() {
     this.navCtrl.pop();
   }
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
+
+
 
   ngAfterViewInit() {
     this.zone.run(() => {

@@ -68,6 +68,7 @@ import {HomeoprofPage} from "../pages/homeoprof/homeoprof";
 import {HomeoPage} from "../pages/homeo/homeo";
 import {HomeoeditPage} from "../pages/homeoedit/homeoedit";
 import {HomeroselfPage} from "../pages/homeroself/homeroself";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 
 export const firebaseConfig = {
@@ -200,7 +201,7 @@ firebase.initializeApp(firebaseConfig);
     HomeoeditPage,
     HomeroselfPage
   ],
-  providers: [ Camera,FilePath,File,FileTransfer,FileTransferObject,
+  providers: [ Camera,FilePath,File,FileTransfer,FileTransferObject,LaunchNavigator,
     StatusBar,Geolocation,LocationProvider,Diagnostic,OpenNativeSettings,LocationAccuracy,
     SplashScreen,BackgroundGeolocation,GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

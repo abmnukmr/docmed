@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {PathoprofPage} from "../pathoprof/pathoprof";
 import {Http} from "@angular/http";
 import {LocationProvider} from "../../providers/location/location";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the PathalogyPage page.
@@ -32,6 +33,11 @@ export class PathalogyPage {
   goto(em){
     this.navCtrl.push(PathoprofPage,{"email":em});
   }
+
+
+
+
+
 
 
   load(lati,lngi)

@@ -82,14 +82,8 @@
       <ion-item>
         <ion-icon name="pin" color="secondary"  item-left ></ion-icon>
         <ion-label item-start>Location</ion-label>
-        <ion-label item-end>
+        <ion-label item-end>  <p (click)="nevigate(data?.lat,data?.lng,data?.name)"> get Location </p> </ion-label>
 
-
-
-
-          <a href="geo:{{data?.lat}},{{data?.lng}}"  style="margin-left: 4px; color: #8bcbff ">
-
-            get Location </a> </ion-label>
       </ion-item>
 
 

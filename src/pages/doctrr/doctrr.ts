@@ -3,6 +3,7 @@ import {AlertController, Content, NavController, NavParams} from 'ionic-angular'
 import {DoctersprofPage} from "../doctersprof/doctersprof";
 import {Http} from "@angular/http";
 import {LocationProvider} from "../../providers/location/location";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the DoctrrPage page.
@@ -24,13 +25,25 @@ export class DoctrrPage {
   @ViewChild(Content) content: Content;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider,public zone:NgZone,public alertCtrl: AlertController) {
+  constructor(public nevigator:LaunchNavigator,public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider,public zone:NgZone,public alertCtrl: AlertController) {
 
   this.emilsearch=navParams.get("email");
 
     console.log(this.emilsearch);
 
     this.load(this.emilsearch);
+  }
+
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
   }
 
 

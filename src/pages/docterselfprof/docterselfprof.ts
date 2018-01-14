@@ -3,6 +3,7 @@ import {AlertController, Content, IonicPage, ModalController, NavController, Nav
 import {DoceditPage} from "../docedit/docedit";
 import {Http} from "@angular/http";
 import * as firebase from 'firebase';
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the DocterselfprofPage page.
@@ -21,7 +22,7 @@ export class DocterselfprofPage {
   emailsearch:any;
   @ViewChild(Content) content: Content;
 
-  constructor(public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public alertCtrl: AlertController) {
+  constructor(public  nevigator:LaunchNavigator,public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public alertCtrl: AlertController) {
     //this.detescroll();
   this.load();
   }
@@ -52,6 +53,17 @@ export class DocterselfprofPage {
     er.present()
   }
 
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DoctrrPage');

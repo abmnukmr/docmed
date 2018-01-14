@@ -3,6 +3,7 @@ import {  NavController, NavParams } from 'ionic-angular';
 import {HospitalprofPage} from "../hospitalprof/hospitalprof";
 import {Http} from "@angular/http";
 import {LocationProvider} from "../../providers/location/location";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the HosptalListPage page.

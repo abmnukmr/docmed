@@ -5,6 +5,7 @@ import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs";
 
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 import {LocationProvider} from "../../providers/location/location";
 
@@ -27,7 +28,7 @@ export class DoctersprofPage {
   data:any;
   // Necessary for the change() method below
  shovaL:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider) {
+  constructor(public nevigator:LaunchNavigator,public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider) {
 
     this.shovaL=this.navParams.get("cata")
 
@@ -42,7 +43,15 @@ export class DoctersprofPage {
   }
 
 
+  nevigate(lat,lng,name){
 
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
   ionViewDidLoad() {
 
     this.load(this.Loc.lat,this.Loc.lng);

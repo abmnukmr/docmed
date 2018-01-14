@@ -4,6 +4,7 @@ import {ChemistprofPage} from "../chemistprof/chemistprof";
 import { Geolocation } from '@ionic-native/geolocation';
 import {LocationProvider} from "../../providers/location/location";
 import {Http} from "@angular/http";
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the ChemistPage page.

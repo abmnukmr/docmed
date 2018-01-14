@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, NavController, NavParams, ViewController} 
 import {Http, RequestOptions,Headers} from "@angular/http";
 import {LocationProvider} from "../../providers/location/location";
 import * as firebase from 'firebase';
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the ChemisteditPage page.
@@ -38,7 +39,7 @@ export class ChemisteditPage {
   items:any;
   DlNo:any;
   loading:any;
-  constructor(public http:Http,public Loc:LocationProvider,public navCtrl: NavController, public navParams: NavParams,public loadingCtrl:LoadingController) {
+  constructor(public nevigator:LaunchNavigator,public http:Http,public Loc:LocationProvider,public navCtrl: NavController, public navParams: NavParams,public loadingCtrl:LoadingController) {
     this.location=this.Loc.lng+ ","+this.Loc.lng;
     this.loading = this.loadingCtrl.create({
       content:"wait..."
@@ -68,6 +69,18 @@ export class ChemisteditPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChemisteditPage');
+  }
+
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
   }
   cnal(){
     this.navCtrl.pop();

@@ -3,6 +3,8 @@ import {Content, IonicPage, ModalController, NavController, NavParams} from 'ion
 import {PatheditPage} from "../pathedit/pathedit";
 import {Http} from "@angular/http";
 import *as firebase from  'firebase'
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
+
 /**
  * Generated class for the PathalogyselfprofPage page.
  *
@@ -19,7 +21,7 @@ export class PathalogyselfprofPage {
  emailsearch:any;
   showheader:boolean=true;
   @ViewChild(Content) content: Content;
-  constructor(public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
+  constructor(public nevigator:LaunchNavigator,public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
     //this.detescroll();
 
     var user = firebase.auth().currentUser;
@@ -59,6 +61,18 @@ export class PathalogyselfprofPage {
     er.present()
 
   }
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
+
 
 
   ionViewDidLoad() {

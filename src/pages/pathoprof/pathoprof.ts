@@ -2,6 +2,7 @@ import {Component, NgZone, ViewChild} from '@angular/core';
 import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {PathalogyPage} from "../pathalogy/pathalogy";
 import {Http} from "@angular/http";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the PathoprofPage page.
@@ -18,7 +19,7 @@ export class PathoprofPage {
   showheader:boolean=true;
   data:any;
   @ViewChild(Content) content: Content;
-  constructor(public http:Http,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
+  constructor(public nevigator:LaunchNavigator,public http:Http,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone) {
     //this.detescroll();
   this.load(this.navParams.get("email"))
   }
@@ -30,6 +31,17 @@ export class PathoprofPage {
   gob(){
     this.navCtrl.pop(PathalogyPage);
   }
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
+
 
   ngAfterViewInit() {
     this.zone.run(() => {

@@ -7,8 +7,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FilePath } from '@ionic-native/file-path';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-
 import {ChemistprofPage} from "../chemistprof/chemistprof";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
+
 /**
  * Generated class for the OrderchemPage page.
  *
@@ -144,6 +145,12 @@ export class OrderchemPage {
 
 
 
+
+
+
+  cofirmorder(){
+
+  }
 
 
   // Create a new name for the image

@@ -4,6 +4,8 @@ import {AurvededitPage} from "../aurvededit/aurvededit";
 import {HomeoeditPage} from "../homeoedit/homeoedit";
 import {Http} from "@angular/http";
 import  *as firebase from 'firebase'
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
+
 /**
  * Generated class for the HomeroselfPage page.
  *
@@ -29,7 +31,7 @@ export class HomeroselfPage {
   @ViewChild(Content) private _content: Content;
   showheader: boolean = true;
    emailsearch:any;
-  constructor(public Mdl:ModalController,public http:Http,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
+  constructor(public nevigator:LaunchNavigator,public Mdl:ModalController,public http:Http,public navCtrl: NavController,public alertCtrl:AlertController ,public navParams: NavParams, public zone: NgZone) {
 
 
     var user = firebase.auth().currentUser;
@@ -42,6 +44,17 @@ export class HomeroselfPage {
 
   }
 
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
 
 
   gotoedit(nm,ex,fee,lic,spl,add,phn,sunt,mont,tut,wedt,thut,frdt,satt,ser ){

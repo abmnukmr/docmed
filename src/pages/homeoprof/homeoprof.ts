@@ -2,6 +2,7 @@ import {Component, NgZone, ViewChild} from '@angular/core';
 import {AlertController, Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HomeoPage} from "../homeo/homeo";
 import {Http} from "@angular/http";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the HomeoprofPage page.
@@ -18,7 +19,7 @@ export class HomeoprofPage {
    data:any;
   @ViewChild(Content) content: Content;
   showheader:boolean=true;
-  constructor(public http:Http,public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
+  constructor(public nevigator:LaunchNavigator,public http:Http,public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
   this.load(this.navParams.get("email"))
   }
 
@@ -26,6 +27,16 @@ export class HomeoprofPage {
     console.log('ionViewDidLoad ChemistprofPage');
   }
 
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
 
   ngAfterViewInit() {
     this.zone.run(() => {

@@ -5,6 +5,7 @@ import {OrderaurPage} from "../orderaur/orderaur";
 import {Http} from "@angular/http";
 import {AyurvedalistPage} from "../ayurvedalist/ayurvedalist";
 import {LocationProvider} from "../../providers/location/location";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the AyurvedaprofPage page.
@@ -27,7 +28,7 @@ export class AyurvedaprofPage {
   @ViewChild(Content) content: Content;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider,public zone:NgZone,public alertCtrl: AlertController) {
+  constructor(public nevigator:LaunchNavigator, public navCtrl: NavController, public navParams: NavParams,public http: Http,public Loc:LocationProvider,public zone:NgZone,public alertCtrl: AlertController) {
 
     this.emilsearch=navParams.get("email");
 
@@ -48,6 +49,23 @@ export class AyurvedaprofPage {
   gob(){
     this.navCtrl.pop(AyurvedalistPage);
   }
+
+
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
+
+
+
+
 
   ngAfterViewInit() {
     this.zone.run(() => {

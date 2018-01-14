@@ -9,7 +9,11 @@ import {FileTransferObject, FileTransfer} from "@ionic-native/file-transfer";
 import {FilePath} from "@ionic-native/file-path";
 import {Camera} from "@ionic-native/camera";
 import { File } from '@ionic-native/file';
+
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
+
 /**
+ *
  * Generated class for the OrderaurPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info

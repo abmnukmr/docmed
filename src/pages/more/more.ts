@@ -17,6 +17,7 @@ import {AddayurvedaPage} from "../addayurveda/addayurveda";
 import {AddpathaPage} from "../addpatha/addpatha";
 import {HomeoaddPage} from "../homeoadd/homeoadd";
 import {HomeroselfPage} from "../homeroself/homeroself";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 /**
  * Generated class for the MorePage page.

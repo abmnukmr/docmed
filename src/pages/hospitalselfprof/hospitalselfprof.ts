@@ -3,6 +3,8 @@ import {AlertController, Content, IonicPage, ModalController, NavController, Nav
 import {HospieditPage} from "../hospiedit/hospiedit";
 import {Http} from "@angular/http";
 import  * as firebase from 'firebase'
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
+
 /**
  * Generated class for the HospitalselfprofPage page.
  *
@@ -19,7 +21,7 @@ export class HospitalselfprofPage {
    emailsearch:any;
   showheader:boolean=true;
   @ViewChild(Content) content: Content;
-  constructor(public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone,public alertCtrl: AlertController) {
+  constructor(public nevigator:LaunchNavigator,public http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams, public zone:NgZone,public alertCtrl: AlertController) {
     var user = firebase.auth().currentUser;
     if (user != null) {
       var  name = user.displayName;
@@ -32,6 +34,18 @@ export class HospitalselfprofPage {
   }
 
 
+
+
+
+  nevigate(lat,lng,name){
+
+    //31.7104269,76.5258813
+    this.nevigator.navigate([lat, lng], {
+      // start: 'this.lati,this.lngi'
+
+      destinationName:name
+    });
+  }
 
 
 
