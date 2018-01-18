@@ -1,4 +1,4 @@
-<ion-header  [hidden]="showheader">
+ <ion-header  [hidden]="showheader">
   <ion-navbar>
     <ion-title>
       Aditya
@@ -9,12 +9,40 @@
 
 <ion-content elastic-header  >
 
-  <div class="paralaxed">
+  <ion-item [hidden]="ed">
+    <ion-label color="primary" floating>Name</ion-label>
+    <ion-input [(ngModel)]="name" ></ion-input>
+  </ion-item>
+  <ion-item [hidden]="ed">
+    <ion-label color="primary" floating>Age</ion-label>
+    <ion-input type="number" [(ngModel)]="age" ></ion-input>
+  </ion-item>
+  <ion-item [hidden]="ed">
+    <ion-label color="primary" floating>Phone</ion-label>
+    <ion-input type="number" [(ngModel)]="phone" ></ion-input>
+  </ion-item>
 
-    <h6 margin-top="80px">{{email}}</h6>
+  <h4  style=" color:#50d8ff;margin-left: 5%;" [hidden]="!ed">{{data?.name}}</h4>
 
-  </div>
+  <h5  style=" color:#50d8ff;margin-left: 5%;" [hidden]="!ed">{{data?.age}}</h5>
+  <h6 style="color:#030303; margin-left: 5%;" [hidden]="!ed">{{data?.sex}}</h6>
 
+  <h6 style="color:#030303; margin-left: 5%;" [hidden]="!ed">{{data?.phone}}</h6>
+
+  <ion-item [hidden]="ed">
+    <ion-label>Gender</ion-label>
+    <ion-select [(ngModel)]="sex">
+      <ion-option value="female">Female</ion-option>
+      <ion-option value="male">Male</ion-option>
+      <ion-option value="others">Others</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+
+  <button ion-button  [hidden]="!ed"  full (click)="Edit()"> Edit</button>
+
+  <button ion-button  [hidden]="ed"  full (click)="save()"> Save</button>
 
 </ion-content>
 <ion-footer no-border>

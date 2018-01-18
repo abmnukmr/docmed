@@ -38,9 +38,9 @@ export class OrderchemPage {
   imgin;
   targetimages=[];
 
-  address:any;
-  phone:any;
-  description:any;
+  address:any="";
+  phone:any="";
+  description:any="";
 //  private cropper:cropperjs.Cropper;
 
   @ViewChild('imageSrc') input: ElementRef;
@@ -194,62 +194,69 @@ export class OrderchemPage {
 
 
   public uploadImage() {
-    this.show=false;
-    this.spinshow=false;
-    this.loading.present();
 
-/*
-    var user = firebase.auth().currentUser;
-    if (user != null) {
-      var  name = user.displayName;
-      this.email1 = user.email;
-      var  photoUrl = user.photoURL;
+
+    if(this.address==""||this.description==""||this.phone==""||this. images == []){
+      alert("Fill all deatils");
     }
+      else {
+      this.show = false;
+      this.spinshow = false;
+      this.loading.present();
 
-    */
-    // Destination URL
-    var url = "https://vioti.herokuapp.com/profile/upload/email/"+this.email1;
+      /*
+          var user = firebase.auth().currentUser;
+          if (user != null) {
+            var  name = user.displayName;
+            this.email1 = user.email;
+            var  photoUrl = user.photoURL;
+          }
 
-    // File for Upload
-    var targetPath = this.pathForImage(this.lastImage);
-    // this.presentToast(targetPath);
-    // File name only
-    var filename = this.lastImage;
+          */
+      // Destination URL
+      var url = "https://vioti.herokuapp.com/profile/upload/email/" + this.email1;
 
-    var options = {
-      fileKey: "file",
-      httpMethod: "POST",
-      //fileName: filename,
-      headers:{
-        'Access-Control-Allow-Origin':'*',
-      },
-      chunkedMode:true,
-      mimeType: "image/png",
-      params : {address:this.address,description: this.description,phone:this.phone}
-    };
+      // File for Upload
+      var targetPath = this.pathForImage(this.lastImage);
+      // this.presentToast(targetPath);
+      // File name only
+      var filename = this.lastImage;
 
-    const fileTransfer: FileTransferObject = this.transfer.create();
+      var options = {
+        fileKey: "file",
+        httpMethod: "POST",
+        //fileName: filename,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+        chunkedMode: true,
+        mimeType: "image/png",
+        params: {address: this.address, description: this.description, phone: this.phone}
+      };
+
+      const fileTransfer: FileTransferObject = this.transfer.create();
 
 
 //    const fileTransfer = new Transfer();
-    //this.presentToast(fileTransfer);
+      //this.presentToast(fileTransfer);
 
 
-    // Use the FileTransfer to upload the image
-    fileTransfer.upload( targetPath,url,options).then(data => {
-      this.spinshow=true;
+      // Use the FileTransfer to upload the image
+      fileTransfer.upload(targetPath, url, options).then(data => {
+        this.spinshow = true;
 
-      this.loading.dismissAll();
-      console.log(data);
-      this.navCtrl.popTo(ChemistprofPage);
-      this.presentToast('Item succesfully uploaded.');
-    }, err => {
-      this.show=true;
-      this.loading.dismissAll();
-      this.presentToast("Failed");
-      // console.log(err);
-      // this.presentToast('Error while uploading file.');
-    });
+        this.loading.dismissAll();
+        console.log(data);
+        this.navCtrl.popTo(ChemistprofPage);
+        this.presentToast('Item succesfully uploaded.');
+      }, err => {
+        this.show = true;
+        this.loading.dismissAll();
+        this.presentToast("Failed");
+        // console.log(err);
+        // this.presentToast('Error while uploading file.');
+      });
+    }
   }
 
 

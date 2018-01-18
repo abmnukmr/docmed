@@ -57,7 +57,7 @@ import {LocationAccuracy} from "@ionic-native/location-accuracy";
 import {BackgroundGeolocation} from "@ionic-native/background-geolocation";
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 import {AngularFireModule} from "angularfire2";
-
+import { Storage } from '@ionic/storage';
 import * as firebase from "firebase";
 import {GooglePlus} from "@ionic-native/google-plus";
 import {RegisterPage} from "../pages/register/register";
@@ -69,6 +69,7 @@ import {HomeoPage} from "../pages/homeo/homeo";
 import {HomeoeditPage} from "../pages/homeoedit/homeoedit";
 import {HomeroselfPage} from "../pages/homeroself/homeroself";
 import {LaunchNavigator} from "@ionic-native/launch-navigator";
+import { IonicStorageModule } from '@ionic/storage';
 
 
 export const firebaseConfig = {
@@ -143,9 +144,9 @@ firebase.initializeApp(firebaseConfig);
   imports: [
     BrowserModule,
     HttpModule,
-
     IonicModule.forRoot(MyApp,{ tabsHideOnSubPages: false,
     }),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
   //  AngularFireAuth
   ],

@@ -23,7 +23,7 @@ export class ChemistselfprofPage {
   data:any;
   email1:any;
   emailsearch:any;
-  constructor(public loading:Lo,public nevigator:LaunchNavigator,public  http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
+  constructor(public nevigator:LaunchNavigator,public  http:Http,public Mdl:ModalController,public navCtrl: NavController, public navParams: NavParams,public zone:NgZone,public alertCtrl:AlertController) {
 
     this.load();
     var user = firebase.auth().currentUser;
@@ -200,41 +200,6 @@ export class ChemistselfprofPage {
 
 
 
-
-  cnf(id,em) {
-    this.loading.present();
-    var user = firebase.auth().currentUser;
-    if (user != null) {
-      var name = user.displayName;
-      this.email1 = user.email;
-      var photoUrl = user.photoURL;
-    }
-
-    this.update = {
-
-    }
-    console.log("updated start");
-    var headers = new Headers();
-    headers.append('content-type', 'application/json;charset=UTF-8');
-    headers.append('Access-Control-Allow-Origin', '*');
-    let options = new RequestOptions({headers:headers});
-
-    this.http.post("https://quiet-ridge-46090.herokuapp.com/add/ayurveda/" + this.email1, JSON.stringify(this.update), options)
-      .map(res => res.json()).subscribe(data => {
-      console.log(data)
-      this.loading.dismiss();
-      this.cnal();
-      //this.navCtrl.push(WalletPage);
-    }, err => {
-      console.log("Error!:", err);
-      this.loading.dismiss();
-    });
-
-    this.loading.dismiss();
-    this.cnal();
-
-
-  }
 
 
 

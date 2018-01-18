@@ -105,9 +105,7 @@
       <ion-card style="background-color: rgba(253,253,253,0.68)" [hidden]="iy.chem_id==email1||iy?.sender_id==email1 ||iy?.admin_id==email1?false:true"   *ngFor="let iy of data?.orders"  >
 
         <ion-item>
-          <button ion-button icon-left clear small item-end (click)="showCheckbox()">
-            <ion-icon name="more" [hidden]="iy?.chem_id==email1||iy?.sender_id==email1 ||iy?.admin_id==email1?false:true" ></ion-icon>
-          </button>
+
 
         </ion-item>
         <img [src]="iy.image">

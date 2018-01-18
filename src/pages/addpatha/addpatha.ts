@@ -53,39 +53,43 @@ export class AddpathaPage {
       var photoUrl = user.photoURL;
     }
 
-    this.update = {
+    if ( this.name == "" ||  this.email1 == "" ||  this.address == "" || this.phone == "" ||this.DlNo=="") {
 
 
+      this.update = {
 
-      "name":this.name,
-      "email":this.email1,
-      "address":this.address,
-      "lat":this.Loc.lat,
-      "lng":this.Loc.lat,
-      "phone":this.phone,
-      "dl_no":this.DlNo
-    }
-    console.log("updated start");
-    var headers = new Headers();
-    headers.append('content-type', 'application/json;charset=UTF-8');
-    headers.append('Access-Control-Allow-Origin', '*');
-    let options = new RequestOptions({headers:headers});
 
-    this.http.post(this.url+"/add/pathalogy/" + this.email1, JSON.stringify(this.update), options)
-      .map(res => res.json()).subscribe(data => {
-      console.log(data)
+        "name": this.name,
+        "email": this.email1,
+        "address": this.address,
+        "lat": this.Loc.lat,
+        "lng": this.Loc.lat,
+        "phone": this.phone,
+        "dl_no": this.DlNo
+      }
+      console.log("updated start");
+      var headers = new Headers();
+      headers.append('content-type', 'application/json;charset=UTF-8');
+      headers.append('Access-Control-Allow-Origin', '*');
+      let options = new RequestOptions({headers: headers});
+
+      this.http.post(this.url + "/add/pathalogy/" + this.email1, JSON.stringify(this.update), options)
+        .map(res => res.json()).subscribe(data => {
+        console.log(data)
+        this.loading.dismiss();
+        this.cnal();
+        //this.navCtrl.push(WalletPage);
+      }, err => {
+        console.log("Error!:", err.json());
+        this.loading.dismiss();
+      });
+
       this.loading.dismiss();
       this.cnal();
-      //this.navCtrl.push(WalletPage);
-    }, err => {
-      console.log("Error!:", err.json());
-      this.loading.dismiss();
-    });
 
-    this.loading.dismiss();
-    this.cnal();
-
-
+    }else {
+      alert("Fill all details");
+    }
   }
 
 }

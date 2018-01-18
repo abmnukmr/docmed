@@ -55,41 +55,47 @@ export class AddhospitalPage {
       var photoUrl = user.photoURL;
     }
 
-    this.update = {
+    if ( this.name == "" ||  this.email1 == "" ||  this.address == "" || this.phone == "" || this.doctors == "" || this.services == "") {
 
 
+      this.update = {
 
-      "name":this.name,
-      "email": this.email1,
-      "doctors":this.doctors,
-      "address":this.address,
-      "lat": this.Loc.lat,
-      "lng": this.Loc.lng,
-      "phone":this.phone,
-      "services":this.services
 
-    }
-    console.log("updated start");
-    var headers = new Headers();
-    headers.append('content-type', 'application/json;charset=UTF-8');
-    headers.append('Access-Control-Allow-Origin', '*');
-    let options = new RequestOptions({headers:headers});
+        "name": this.name,
+        "email": this.email1,
+        "doctors": this.doctors,
+        "address": this.address,
+        "lat": this.Loc.lat,
+        "lng": this.Loc.lng,
+        "phone": this.phone,
+        "services": this.services
 
-    this.http.post(this.url+"/add/hospital/" + this.email1, JSON.stringify(this.update), options)
-      .map(res => res.json()).subscribe(data => {
-      console.log(data)
+      }
+      console.log("updated start");
+      var headers = new Headers();
+      headers.append('content-type', 'application/json;charset=UTF-8');
+      headers.append('Access-Control-Allow-Origin', '*');
+      let options = new RequestOptions({headers: headers});
+
+      this.http.post(this.url + "/add/hospital/" + this.email1, JSON.stringify(this.update), options)
+        .map(res => res.json()).subscribe(data => {
+        console.log(data)
+        this.loading.dismiss();
+        this.cnal();
+        //this.navCtrl.push(WalletPage);
+      }, err => {
+        console.log("Error!:", err.json());
+        this.loading.dismiss();
+      });
+
       this.loading.dismiss();
       this.cnal();
-      //this.navCtrl.push(WalletPage);
-    }, err => {
-      console.log("Error!:", err.json());
-      this.loading.dismiss();
-    });
 
-    this.loading.dismiss();
-    this.cnal();
-
-
+    }
+    else
+      {
+      alert("Fill all details")
+    }
   }
 
 }
